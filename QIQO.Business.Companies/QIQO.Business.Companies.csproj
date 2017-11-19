@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Services\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
@@ -19,6 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\QIQO.Business.Companies.Model\QIQO.Business.Companies.Model.csproj" />
+    <ProjectReference Include="..\QIQO.Business.Core\QIQO.Business.Core.csproj" />
   </ItemGroup>
 
 </Project>
