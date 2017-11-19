@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  ci-build:
+    image: microsoft/aspnetcore-build:1.0-2.0
+    volumes:
+      - .:/src
+    working_dir: /src
+    command: /bin/bash -c "dotnet restore ./QIQO.Business.Companies.sln && dotnet publish ./QIQO.Business.Companies.sln -c Release -o ./obj/Docker/publish"

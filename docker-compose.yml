@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  qiqo.business.companies:
+    image: qiqo.business.companies
+    build:
+      context: ./QIQO.Business.Companies
+      dockerfile: Dockerfile
