@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\QIQO.Business.Companies.Data\QIQO.Business.Companies.Data.csproj" />
+    <ProjectReference Include="..\QIQO.Business.Core\QIQO.Business.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Interfaces\" />
+    <Folder Include="Models\" />
+    <Folder Include="Proxies\" />
+    <Folder Include="Services\" />
+  </ItemGroup>
+
+</Project>

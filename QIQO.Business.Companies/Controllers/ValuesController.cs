@@ -3,39 +3,51 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using QIQO.Business.Companies.ViewModels;
 
 namespace QIQO.Business.Companies.Controllers
 {
-    [Route("api/[controller]")]
-    public class ValuesController : Controller
+    [Produces("application/json")]
+    [Route("api/companies")]
+    public class CompanyController : Controller
     {
-        // GET api/values
+        // GET api/companies
         [HttpGet]
-        public IEnumerable<string> Get()
+        public async Task<IActionResult> GetAsync()
         {
-            return new string[] { "value1", "value2" };
+            return Ok(await Task.Run(() =>
+            {
+                return new List<CompanyViewModel>
+                {
+                    new CompanyViewModel { CompanyName = "Company 1"},
+                    new CompanyViewModel { CompanyName = "Company 2"}
+                };
+            }));
         }
 
-        // GET api/values/5
+        // GET api/companies/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public async Task<IActionResult> GetAsync(int id)
         {
-            return "value";
+            return Ok(await Task.Run(() =>
+            {
+                return new CompanyViewModel { CompanyName = "Company 1" };
+            }));
         }
 
-        // POST api/values
+        // POST api/companies
         [HttpPost]
-        public void Post([FromBody]string value)
+        public void Post([FromBody]CompanyViewModel value)
         {
         }
 
-        // PUT api/values/5
+        // PUT api/companies/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
+        public void Put(int id, [FromBody]CompanyViewModel value)
         {
         }
 
-        // DELETE api/values/5
+        // DELETE api/companies/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {

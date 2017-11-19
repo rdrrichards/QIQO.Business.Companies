@@ -4,7 +4,7 @@
     <ProjectVersion>2.0</ProjectVersion>
     <DockerTargetOS>Linux</DockerTargetOS>
     <ProjectGuid>36470c8e-9275-4572-bbdc-978e4268a9d2</ProjectGuid>
-    <DockerLaunchBrowser>True</DockerLaunchBrowser>
+    <DockerLaunchBrowser>false</DockerLaunchBrowser>
     <DockerServiceUrl>http://localhost:{ServicePort}/api/values</DockerServiceUrl>
     <DockerServiceName>qiqo.business.companies</DockerServiceName>
   </PropertyGroup>
