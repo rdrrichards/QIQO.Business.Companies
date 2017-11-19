@@ -42,23 +42,35 @@ namespace QIQO.Business.Companies.Controllers
 
         // POST api/companies
         [HttpPost]
-        public void Post([FromBody]CompanyViewModel value)
+        public async Task Post([FromBody]CompanyViewModel value)
         {
             // call something to map the vm to a model, then insert (via model proxy)
+            await ExecuteHandledOperationAsync(() =>
+            {
+
+            });
         }
 
         // PUT api/companies/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody]CompanyViewModel value)
+        public async Task Put(int id, [FromBody]CompanyViewModel value)
         {
             // call something to map the vm to a model, then update (via model proxy)
+            await ExecuteHandledOperationAsync(() =>
+            {
+
+            });
         }
 
         // DELETE api/companies/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public async Task Delete(int id)
         {
             // call something to map the vm to a model, then delete (via model proxy)
+            await ExecuteHandledOperationAsync(() =>
+            {
+
+            });
         }
     }
 }
