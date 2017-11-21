@@ -15,7 +15,7 @@ namespace QIQO.Business.Companies.Data.Entities
         public string UpdateUserID { get; set; }
         public DateTime UpdateDateTime { get; set; }
 
-        public List<LedgerTxn> LedgerTxns { get; set; } = new List<LedgerTxn>();
+        public ICollection<LedgerTxn> LedgerTxns { get; set; } = new List<LedgerTxn>();
 
     }
 

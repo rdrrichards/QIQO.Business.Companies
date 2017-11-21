@@ -15,8 +15,8 @@ namespace QIQO.Business.Companies.Data.Entities
         public string EmployeeFullNameLF => $"{EmployeeLastName} {EmployeeFirstName}";
         public string EmployeeFullNameLFM => $"{EmployeeLastName} {EmployeeMI} {EmployeeFirstName}";
         public DateTime? EmployeeDOB { get; set; }
-        public List<Address> Addresses { get; set; } = new List<Address>();
-        public List<EntityAttribute> EmployeeAttributes { get; set; } = new List<EntityAttribute>();
+        public ICollection<Address> Addresses { get; set; } = new List<Address>();
+        public ICollection<EntityAttribute> EmployeeAttributes { get; set; } = new List<EntityAttribute>();
 
         //public QIQOPersonType Type  { get; set; }
         public EmployeeType EmployeeTypeData { get; set; } = new EmployeeType();
