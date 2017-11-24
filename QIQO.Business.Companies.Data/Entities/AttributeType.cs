@@ -1,5 +1,4 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace QIQO.Business.Companies.Data.Entities
 {
@@ -7,17 +6,23 @@ namespace QIQO.Business.Companies.Data.Entities
     {
         [Key]
         public int AttributeTypeKey { get; set; }
-        public string AttributeTypeCategory { get; set; }
-        public string AttributeTypeCode { get; set; }
-        public string AttributeTypeName { get; set; }
-        public string AttributeTypeDesc { get; set; }
-        public QIQOAttributeDataType AttributeDataTypeKey { get; set; } = QIQOAttributeDataType.String;
+        public QIQOAttributeDataType AttributeDataTypeKey { get; set; }
         public string AttributeDefaultFormat { get; set; }
-        public string AddedUserID { get; set; }
-        public DateTime AddedDateTime { get; set; }
-        public string UpdateUserID { get; set; }
-        public DateTime UpdateDateTime { get; set; }
+        [Required]
+        [MaxLength(20, ErrorMessage = "The max length of a attribute type code is 20 characters")]
+        public string AttributeTypeCode { get; set; }
 
+        [Required]
+        [MaxLength(30, ErrorMessage = "The max length of a attribute type category is 30 characters")]
+        public string AttributeTypeCategory { get; set; }
+
+        [Required]
+        [MaxLength(150, ErrorMessage = "The max length of a attribute type name is 150 characters")]
+        public string AttributeTypeName { get; set; }
+
+        [Required]
+        [MaxLength(255, ErrorMessage = "The max length of a attribute type description is 255 characters")]
+        public string AttributeTypeDesc { get; set; }
     }
 
 }

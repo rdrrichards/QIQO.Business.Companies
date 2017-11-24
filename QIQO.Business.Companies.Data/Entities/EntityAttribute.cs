@@ -1,25 +1,30 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace QIQO.Business.Companies.Data.Entities
 {
     public class EntityAttribute
     {
         [Key]
-        public int AttributeKey { get; set; }
-        public int EntityKey { get; set; }
-        public QIQOEntityType EntityType { get; set; } = QIQOEntityType.Account;
-        public EntityType EntityTypeData { get; set; } = new EntityType();
-        public QIQOAttributeType AttributeType { get; set; } = QIQOAttributeType.AccountContact_CNCT_MAIN;
-        public AttributeType AttributeTypeData { get; set; } = new AttributeType();
-
+        public Guid AttributeId { get; set; }
+        [ForeignKey("Company")]
+        public Guid CompanyId { get; set; }
+        [ForeignKey("AttributeType")]
+        public QIQOAttributeType AttributeTypeKey { get; set; }
+        public AttributeType AttributeType { get; set; }
         public string AttributeValue { get; set; }
-        public int AttributeDataTypeKey { get; set; }
-        public QIQOAttributeDataType AttributeDataType { get; set; } = QIQOAttributeDataType.String;
+        [MaxLength(20, ErrorMessage = "The attribute data type name cannot be longer than 20 characters")]
+        public string AttributeDataType { get; set; }
+        [MaxLength(100, ErrorMessage = "The attribute display format name cannot be longer than 100 characters")]
         public string AttributeDisplayFormat { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         public string AddedUserID { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         public DateTime AddedDateTime { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         public string UpdateUserID { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         public DateTime UpdateDateTime { get; set; }
 
     }
