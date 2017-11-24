@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace QIQO.Business.Companies.Data.Entities
 {
     public class Employee
     {
+        [Key]
         public int EmployeeKey { get; set; }
         public string EmployeeCode { get; set; }
         public string EmployeeFirstName { get; set; }

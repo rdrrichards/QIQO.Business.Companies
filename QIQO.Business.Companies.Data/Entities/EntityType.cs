@@ -1,9 +1,11 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace QIQO.Business.Companies.Data.Entities
 {
     public class EntityType
     {
+        [Key]
         public int EntityTypeKey { get; set; }
         public string EntityTypeCategory { get; set; }
         public string EntityTypeCode { get; set; }

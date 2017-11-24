@@ -1,9 +1,11 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace QIQO.Business.Companies.Data.Entities
 {
     public class Product
     {
+        [Key]
         public int ProductKey { get; set; }
         public QIQOProductType ProductType { get; set; } = QIQOProductType.Sweet9;
         public ProductType ProductTypeData { get; set; } = new ProductType();

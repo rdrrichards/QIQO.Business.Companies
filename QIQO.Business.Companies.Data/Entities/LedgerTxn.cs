@@ -1,9 +1,11 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace QIQO.Business.Companies.Data.Entities
 {
     public class LedgerTxn
     {
+        [Key]
         public int LedgerTxnKey { get; set; }
         public int LedgerKey { get; set; }
         public string Comment { get; set; }

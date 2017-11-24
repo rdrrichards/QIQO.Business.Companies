@@ -1,9 +1,11 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace QIQO.Business.Companies.Data.Entities
 {
     public class EntityAttribute
     {
+        [Key]
         public int AttributeKey { get; set; }
         public int EntityKey { get; set; }
         public QIQOEntityType EntityType { get; set; } = QIQOEntityType.Account;

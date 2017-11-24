@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Repositories\" />
+    <ProjectReference Include="..\QIQO.Business.Core\QIQO.Business.Core.csproj" />
   </ItemGroup>
 
 </Project>

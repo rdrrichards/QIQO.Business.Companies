@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace QIQO.Business.Companies.Data.Entities
 {
     public class Company
     {
+        [Key]
         public int CompanyKey { get; set; }
         public string CompanyCode { get; set; }
         public string CompanyName { get; set; }

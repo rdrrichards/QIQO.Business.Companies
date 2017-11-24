@@ -1,9 +1,11 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace QIQO.Business.Companies.Data.Entities
 {
     public class AttributeType
     {
+        [Key]
         public int AttributeTypeKey { get; set; }
         public string AttributeTypeCategory { get; set; }
         public string AttributeTypeCode { get; set; }

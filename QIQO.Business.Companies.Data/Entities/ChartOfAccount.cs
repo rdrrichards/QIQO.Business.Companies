@@ -1,9 +1,11 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace QIQO.Business.Companies.Data.Entities
 {
     public class ChartOfAccount
     {
+        [Key]
         public int ChartOfAccountKey { get; set; }
         public string AccountNo { get; set; }
         public string AccountType { get; set; }

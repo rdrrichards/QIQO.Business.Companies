@@ -1,9 +1,11 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace QIQO.Business.Companies.Data.Entities
 {
     public class FeeSchedule
     {
+        [Key]
         public int FeeScheduleKey { get; set; }
         public int CompanyKey { get; set; }
         public int AccountKey { get; set; }

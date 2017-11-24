@@ -1,9 +1,11 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace QIQO.Business.Companies.Data.Entities
 {
     public class AddressType
     {
+        [Key]
         public int AddressTypeKey { get; set; }
         public string AddressTypeCode { get; set; }
         public string AddressTypeName { get; set; }

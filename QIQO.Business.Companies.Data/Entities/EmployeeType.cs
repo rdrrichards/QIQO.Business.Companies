@@ -1,11 +1,12 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace QIQO.Business.Companies.Data.Entities
 {
     public class EmployeeType
     {
+        [Key]
         public int EmployeeTypeKey { get; set; }
-
         public string EmployeeTypeCategory { get; set; }
         public string EmployeeTypeCode { get; set; }
         public string EmployeeTypeName { get; set; }

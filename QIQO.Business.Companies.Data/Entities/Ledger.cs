@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace QIQO.Business.Companies.Data.Entities
 {
     public class Ledger
     {
+        [Key]
         public int LedgerKey { get; set; }
         public int CompanyKey { get; set; }
         public string LedgeCode { get; set; }

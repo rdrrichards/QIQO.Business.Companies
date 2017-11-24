@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
+using QIQO.Business.Companies.Data.Contexts;
+using Microsoft.EntityFrameworkCore;
 
 namespace QIQO.Business.Companies
 {
@@ -32,6 +34,8 @@ namespace QIQO.Business.Companies
                         .AllowAnyMethod();
                 });
             });
+
+            services.AddDbContext<CompanyContext>(option => option.UseSqlServer(Configuration.GetConnectionString("CompanyManagement")));
 
             services.AddMvc();
         }

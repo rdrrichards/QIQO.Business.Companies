@@ -1,7 +1,10 @@
-﻿namespace QIQO.Business.Companies.Data.Entities
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace QIQO.Business.Companies.Data.Entities
 {
     public class ProductType
     {
+        [Key]
         public int ProductTypeKey { get; set; }
 
         public string ProductTypeCategory { get; set; }
