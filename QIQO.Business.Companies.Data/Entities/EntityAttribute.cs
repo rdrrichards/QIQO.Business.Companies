@@ -12,6 +12,7 @@ namespace QIQO.Business.Companies.Data.Entities
         public Guid CompanyId { get; set; }
         // [ForeignKey("AttributeType")]
         // public QIQOAttributeType AttributeTypeKey { get; set; }
+        [Required]
         public AttributeType AttributeType { get; set; }
         public string AttributeValue { get; set; }
         [MaxLength(20, ErrorMessage = "The attribute data type name cannot be longer than 20 characters")]
@@ -20,11 +21,13 @@ namespace QIQO.Business.Companies.Data.Entities
         public string AttributeDisplayFormat { get; set; }
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         [MaxLength(30, ErrorMessage = "The added user id cannot be longer than 30 characters")]
+        [Required]
         public string AddedUserID { get; set; }
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         public DateTime AddedDateTime { get; set; }
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         [MaxLength(30, ErrorMessage = "The updated user id cannot be longer than 30 characters")]
+        [Required]
         public string UpdateUserID { get; set; }
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         public DateTime UpdateDateTime { get; set; }

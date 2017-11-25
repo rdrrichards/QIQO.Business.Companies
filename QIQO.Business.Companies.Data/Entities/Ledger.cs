@@ -19,11 +19,13 @@ namespace QIQO.Business.Companies.Data.Entities
         public string LedgeDesc { get; set; }
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         [MaxLength(30, ErrorMessage = "The added user id cannot be longer than 30 characters")]
+        [Required]
         public string AddedUserID { get; set; }
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         public DateTime AddedDateTime { get; set; }
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         [MaxLength(30, ErrorMessage = "The updated user id cannot be longer than 30 characters")]
+        [Required]
         public string UpdateUserID { get; set; }
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         public DateTime UpdateDateTime { get; set; }

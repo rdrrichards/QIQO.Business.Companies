@@ -11,11 +11,7 @@ namespace QIQO.Business.Companies.Data.Entities
         public Guid ProductId { get; set; }
         [ForeignKey("Company")]
         public Guid CompanyId { get; set; }
-        [Required(ErrorMessage = "A product type must be provided")]
-        [Display(Name = "Product Type")]
-        [ForeignKey("ProductTypeId")]
-        public QIQOProductType ProductType { get; set; } = QIQOProductType.Sweet9;
-        public ProductType ProductTypeData { get; set; }
+        public ProductType ProductType { get; set; }
         [Required(ErrorMessage = "A product code must be provided")]
         [MaxLength(20, ErrorMessage ="A product code cannot be more than 20 characters long")]
         [Display(Name = "Product Code")]
