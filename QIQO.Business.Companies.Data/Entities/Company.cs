@@ -2,14 +2,13 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
 
 namespace QIQO.Business.Companies.Data.Entities
 {
     public class Company
     {
         [Key]
-        public Guid CompanyKey { get; set; }
+        public Guid CompanyId { get; set; }
         [MaxLength(20, ErrorMessage = "The company code cannot be longer than 20 characters")]
         [Required]
         public string CompanyCode { get; set; }
@@ -39,6 +38,7 @@ namespace QIQO.Business.Companies.Data.Entities
         public ICollection<EntityAttribute> CompanyAttributes { get; set; }
         [ForeignKey("EntityId")]
         public ICollection<Address> CompanyAddresses { get; set; }
+        public ICollection<Product> Products { get; set; }
 
     }
 }

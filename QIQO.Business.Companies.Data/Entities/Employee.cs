@@ -9,7 +9,6 @@ namespace QIQO.Business.Companies.Data.Entities
     {
         [Key]
         public Guid EmployeeId { get; set; }
-        [ForeignKey("Company")]
         public Guid CompanyId { get; set; }
         [MaxLength(20, ErrorMessage = "The employee code cannot be longer than 20 characters")]
         [Required]
@@ -28,11 +27,9 @@ namespace QIQO.Business.Companies.Data.Entities
         public string EmployeeFullNameLFM => $"{EmployeeLastName} {EmployeeMI} {EmployeeFirstName}";
         public DateTime? EmployeeDOB { get; set; }
         [ForeignKey("EntityId")]
-        public ICollection<Address> Addresses { get; set; }
+        public ICollection<Address> EmployeeAddresses { get; set; }
         [ForeignKey("EntityId")]
-        public ICollection<EntityAttribute> EmployeeAttributes { get; set; }
-
-        //public QIQOPersonType Type  { get; set; }
+        public ICollection<EntityAttribute> EmployeeAttributes { get; set; }        
         public EmployeeType EmployeeType { get; set; }
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         [MaxLength(30, ErrorMessage = "The added user id cannot be longer than 30 characters")]
@@ -46,7 +43,6 @@ namespace QIQO.Business.Companies.Data.Entities
         public string UpdateUserID { get; set; }
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         public DateTime UpdateDateTime { get; set; }
-
         public Guid ParentEmployeeId { get; set; }
         // public List<Company> Companies { get; set; } = new List<Company>();
         [MaxLength(30, ErrorMessage = "The employee title name cannot be longer than 30 characters")]

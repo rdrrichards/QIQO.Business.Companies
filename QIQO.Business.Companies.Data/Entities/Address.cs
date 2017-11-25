@@ -9,8 +9,10 @@ namespace QIQO.Business.Companies.Data.Entities
         [Key]
         public Guid AddressId { get; set; }
         public AddressType AddressType { get; set; }
-        [ForeignKey("Company")]
-        public Guid CompanyId { get; set; }
+        [Required]
+        public Guid EntityId { get; set; }
+        [Required]
+        public EntityType EntityType { get; set; }
         [MaxLength(100, ErrorMessage = "The address line cannot be longer than 100 characters")]
         [Required]
         public string AddressLine1 { get; set; }

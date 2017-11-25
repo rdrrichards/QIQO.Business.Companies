@@ -8,7 +8,6 @@ namespace QIQO.Business.Companies.Data.Entities
     {
         [Key]
         public Guid FeeScheduleId { get; set; }
-        [ForeignKey("Company")]
         public Guid CompanyId { get; set; }
         [Required]
         public DateTime FeeScheduleStartDate { get; set; }

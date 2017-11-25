@@ -24,5 +24,4 @@ namespace QIQO.Business.Companies.Data.Entities
         [MaxLength(255, ErrorMessage = "The max length of a address type description is 255 characters")]
         public string AddressTypeDesc { get; set; }
     }
-
 }

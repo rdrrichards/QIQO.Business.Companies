@@ -8,10 +8,9 @@ namespace QIQO.Business.Companies.Data.Entities
     {
         [Key]
         public Guid AttributeId { get; set; }
-        [ForeignKey("Company")]
-        public Guid CompanyId { get; set; }
-        // [ForeignKey("AttributeType")]
-        // public QIQOAttributeType AttributeTypeKey { get; set; }
+        public Guid EntityId { get; set; }
+        [Required]
+        public EntityType EntityType { get; set; }
         [Required]
         public AttributeType AttributeType { get; set; }
         public string AttributeValue { get; set; }
@@ -31,7 +30,5 @@ namespace QIQO.Business.Companies.Data.Entities
         public string UpdateUserID { get; set; }
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         public DateTime UpdateDateTime { get; set; }
-
     }
-
 }
