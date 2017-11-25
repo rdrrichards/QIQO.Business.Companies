@@ -11,9 +11,13 @@ namespace QIQO.Business.Companies.Data.Entities
         public Guid EmployeeId { get; set; }
         [ForeignKey("Company")]
         public Guid CompanyId { get; set; }
+        [MaxLength(20, ErrorMessage = "The employee code cannot be longer than 20 characters")]
         public string EmployeeCode { get; set; }
+        [MaxLength(30, ErrorMessage = "The employee first cannot be longer than 30 characters")]
         public string EmployeeFirstName { get; set; }
+        [MaxLength(20, ErrorMessage = "The employee middle name cannot be longer than 20 characters")]
         public string EmployeeMI { get; set; }
+        [MaxLength(30, ErrorMessage = "The employee last name cannot be longer than 30 characters")]
         public string EmployeeLastName { get; set; }
         public string EmployeeFullNameFL => $"{EmployeeFirstName} {EmployeeLastName}";
         public string EmployeeFullNameFML => $"{EmployeeFirstName} {EmployeeMI} {EmployeeLastName}";
@@ -26,22 +30,26 @@ namespace QIQO.Business.Companies.Data.Entities
         public ICollection<EntityAttribute> EmployeeAttributes { get; set; }
 
         //public QIQOPersonType Type  { get; set; }
-        public EmployeeType EmployeeTypeData { get; set; }
+        public EmployeeType EmployeeType { get; set; }
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+        [MaxLength(30, ErrorMessage = "The added user id cannot be longer than 30 characters")]
         public string AddedUserID { get; set; }
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         public DateTime AddedDateTime { get; set; }
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+        [MaxLength(30, ErrorMessage = "The updated user id cannot be longer than 30 characters")]
         public string UpdateUserID { get; set; }
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         public DateTime UpdateDateTime { get; set; }
 
         public Guid ParentEmployeeId { get; set; }
         // public List<Company> Companies { get; set; } = new List<Company>();
+        [MaxLength(30, ErrorMessage = "The employee title name cannot be longer than 30 characters")]
         public string EmployeeTitle { get; set; }
         public Guid EntityEmployeeId { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
+        [MaxLength(255, ErrorMessage = "The employee comment cannot be longer than 255 characters")]
         public string Comment { get; set; }
         public QIQOEmployeeType CompanyRoleType { get; set; } = QIQOEmployeeType.EmployeeHourly;
     }
