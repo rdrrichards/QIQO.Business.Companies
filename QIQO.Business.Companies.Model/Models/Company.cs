@@ -15,5 +15,6 @@ namespace QIQO.Business.Companies.Models
         public List<Ledger> Ledgers { get; set; }
         public List<EntityAttribute> CompanyAttributes { get; set; }
         public List<Address> CompanyAddresses { get; set; }
+        public List<Product> Products { get; set; }
     }
 }

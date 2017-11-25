@@ -14,6 +14,9 @@ namespace QIQO.Business.Companies.Models
         public string ProductNameShort { get; set; }
         public string ProductNameLong { get; set; }
         public string ProductImagePath { get; set; }
-        public List<EntityAttribute> ProductAttributes { get; set; }
+        public decimal ProductBasePrice { get; set; }
+        public decimal ProductCost { get; set; }
+        public int ProductDefaultQuantity { get; set; }
+        public string ProductIncomeAccount { get; set; }
     }
 }

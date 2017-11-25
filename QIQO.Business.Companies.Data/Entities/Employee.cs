@@ -21,10 +21,6 @@ namespace QIQO.Business.Companies.Data.Entities
         [MaxLength(30, ErrorMessage = "The employee last name cannot be longer than 30 characters")]
         [Required]
         public string EmployeeLastName { get; set; }
-        public string EmployeeFullNameFL => $"{EmployeeFirstName} {EmployeeLastName}";
-        public string EmployeeFullNameFML => $"{EmployeeFirstName} {EmployeeMI} {EmployeeLastName}";
-        public string EmployeeFullNameLF => $"{EmployeeLastName} {EmployeeFirstName}";
-        public string EmployeeFullNameLFM => $"{EmployeeLastName} {EmployeeMI} {EmployeeFirstName}";
         public DateTime? EmployeeDOB { get; set; }
         [ForeignKey("EntityId")]
         public ICollection<Address> EmployeeAddresses { get; set; }
