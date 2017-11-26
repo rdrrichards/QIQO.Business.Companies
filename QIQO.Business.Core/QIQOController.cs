@@ -40,12 +40,12 @@ namespace QIQO.Business.Core
         {
             try
             {
-                return Json(codetoExecute.Invoke());
+                return Ok(codetoExecute.Invoke());
             }
             catch (Exception ex)
             {
                 Logger.LogError($"{ex.Source}:{ex.Message}");
-                return Json(ex);
+                return BadRequest(ex);
             }
         }
 

@@ -5,6 +5,7 @@ using QIQO.Business.Core;
 using Microsoft.Extensions.Logging;
 using QIQO.Business.Companies.Model.Interfaces;
 using System;
+using System.Collections.Generic;
 
 namespace QIQO.Business.Companies.Controllers
 {
@@ -22,9 +23,14 @@ namespace QIQO.Business.Companies.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAsync()
         {
-            return await ExecuteHandledOperationAsync(() =>
+            return await ExecuteHandledOperationAsync(async () =>
             {
-                return _companyManager.GetAllAsync();
+                var ret = new List<CompanyViewModel>();
+                var comps = await _companyManager.GetAllAsync();
+                foreach (var comp in comps)
+                    ret.Add(new CompanyViewModel(comp));
+
+                return ret;
             });
         }
 
@@ -32,9 +38,9 @@ namespace QIQO.Business.Companies.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetAsync(Guid id)
         {
-            return await ExecuteHandledOperationAsync(() =>
+            return await ExecuteHandledOperationAsync(async () =>
             {
-                return _companyManager.GetByIDAsync(id);
+                return new CompanyViewModel(await _companyManager.GetByIDAsync(id));
             });
         }
 
@@ -65,9 +71,9 @@ namespace QIQO.Business.Companies.Controllers
         public async Task Delete(Guid id)
         {
             // call something to map the vm to a model, then delete (via model proxy)
-            await ExecuteHandledOperationAsync(() =>
+            await ExecuteHandledOperationAsync(async () =>
             {
-                _companyManager.DeleteAsync(id);
+                await _companyManager.DeleteAsync(id);
             });
         }
     }

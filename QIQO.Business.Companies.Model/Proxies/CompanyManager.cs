@@ -20,11 +20,7 @@ namespace QIQO.Business.Companies.Model.Proxies
 
         public async Task DeleteAsync(Guid Id) => await _companyRepository.DeleteAsync(Id);
 
-        public async Task<IEnumerable<Company>> GetAllAsync()
-        {
-            var company_data = await _companyRepository.GetAllAsync();
-            return _companyEntityService.Map(company_data);
-        }
+        public async Task<IEnumerable<Company>> GetAllAsync() => _companyEntityService.Map(await _companyRepository.GetAllAsync());
 
         public async Task<Company> GetByIDAsync(Guid Id) => _companyEntityService.Map(await _companyRepository.GetByIDAsync(Id));
 
