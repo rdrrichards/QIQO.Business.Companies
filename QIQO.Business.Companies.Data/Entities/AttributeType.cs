@@ -1,8 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using QIQO.Business.Core.Contracts;
+using System.ComponentModel.DataAnnotations;
 
 namespace QIQO.Business.Companies.Data.Entities
 {
-    public class AttributeType
+    public class AttributeTypeData : IEntity
     {
         [Key]
         public int AttributeTypeKey { get; set; }

@@ -1,11 +1,12 @@
-﻿using System;
+﻿using QIQO.Business.Core.Contracts;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace QIQO.Business.Companies.Data.Entities
 {
-    public class Company
+    public class CompanyData : IEntity
     {
         [Key]
         public Guid CompanyId { get; set; }
@@ -30,15 +31,15 @@ namespace QIQO.Business.Companies.Data.Entities
         public string UpdateUserID { get; set; }
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         public DateTime UpdateDateTime { get; set; }
-        public ICollection<Employee> Employees { get; set; }
-        public ICollection<ChartOfAccount> GLAccounts { get; set; }
-        public ICollection<FeeSchedule> FeeSchedules { get; set; }
-        public ICollection<Ledger> Ledgers { get; set; }
+        public ICollection<EmployeeData> Employees { get; set; }
+        public ICollection<ChartOfAccountData> GLAccounts { get; set; }
+        public ICollection<FeeScheduleData> FeeSchedules { get; set; }
+        public ICollection<LedgerData> Ledgers { get; set; }
         [ForeignKey("EntityId")]
-        public ICollection<EntityAttribute> CompanyAttributes { get; set; }
+        public ICollection<EntityAttributeData> CompanyAttributes { get; set; }
         [ForeignKey("EntityId")]
-        public ICollection<Address> CompanyAddresses { get; set; }
-        public ICollection<Product> Products { get; set; }
+        public ICollection<AddressData> CompanyAddresses { get; set; }
+        public ICollection<ProductData> Products { get; set; }
 
     }
 }

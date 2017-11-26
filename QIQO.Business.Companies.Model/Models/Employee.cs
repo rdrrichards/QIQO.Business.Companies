@@ -1,9 +1,10 @@
-﻿using System;
+﻿using QIQO.Business.Core.Contracts;
+using System;
 using System.Collections.Generic;
 
 namespace QIQO.Business.Companies.Models
 {
-    public class Employee
+    public class Employee : IModel
     {
         public Guid EmployeeId { get; set; }
         public Guid CompanyId { get; set; }

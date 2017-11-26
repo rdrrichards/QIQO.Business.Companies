@@ -1,8 +1,10 @@
-﻿using System;
+﻿
+using QIQO.Business.Core.Contracts;
+using System;
 
 namespace QIQO.Business.Companies.Models
 {
-    public class Address
+    public class Address : IModel
     {
         public Guid AddressId { get; set; }
         public AddressType AddressType { get; set; }

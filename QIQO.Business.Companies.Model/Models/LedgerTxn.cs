@@ -1,8 +1,9 @@
-﻿using System;
+﻿using QIQO.Business.Core.Contracts;
+using System;
 
 namespace QIQO.Business.Companies.Models
 {
-    public class LedgerTxn
+    public class LedgerTxn : IModel
     {
         public Guid LedgerTxnId { get; set; }
         public Guid LedgerId { get; set; }

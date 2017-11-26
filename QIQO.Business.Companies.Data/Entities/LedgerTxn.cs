@@ -1,10 +1,11 @@
-﻿using System;
+﻿using QIQO.Business.Core.Contracts;
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace QIQO.Business.Companies.Data.Entities
 {
-    public class LedgerTxn
+    public class LedgerTxnData : IEntity
     {
         [Key]
         public Guid LedgerTxnId { get; set; }

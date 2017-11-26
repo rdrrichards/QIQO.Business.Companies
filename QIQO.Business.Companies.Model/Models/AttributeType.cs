@@ -1,7 +1,9 @@
 ﻿
+using QIQO.Business.Core.Contracts;
+
 namespace QIQO.Business.Companies.Models
 {
-    public class AttributeType
+    public class AttributeType : IModel
     {
         public int AttributeTypeKey { get; set; }
         public QIQOAttributeDataType AttributeDataTypeKey { get; set; }

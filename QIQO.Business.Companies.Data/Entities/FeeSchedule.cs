@@ -1,10 +1,11 @@
-﻿using System;
+﻿using QIQO.Business.Core.Contracts;
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace QIQO.Business.Companies.Data.Entities
 {
-    public class FeeSchedule
+    public class FeeScheduleData : IEntity
     {
         [Key]
         public Guid FeeScheduleId { get; set; }
@@ -31,7 +32,7 @@ namespace QIQO.Business.Companies.Data.Entities
         public string UpdateUserID { get; set; }
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         public DateTime UpdateDateTime { get; set; }
-        public Product Product { get; set; }
+        public ProductData Product { get; set; }
     }
 
 }

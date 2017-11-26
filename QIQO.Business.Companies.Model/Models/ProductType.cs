@@ -1,8 +1,9 @@
-﻿using System;
+﻿using QIQO.Business.Core.Contracts;
+using System;
 
 namespace QIQO.Business.Companies.Models
 {
-    public class ProductType
+    public class ProductType : IModel
     {
         public Guid ProductTypeId { get; set; }
         public string ProductTypeCode { get; set; }

@@ -1,11 +1,12 @@
-﻿using System;
+﻿using QIQO.Business.Core.Contracts;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace QIQO.Business.Companies.Data.Entities
 {
-    public class Ledger
+    public class LedgerData : IEntity
     {
         [Key]
         public Guid LedgerId { get; set; }
@@ -29,7 +30,7 @@ namespace QIQO.Business.Companies.Data.Entities
         public string UpdateUserID { get; set; }
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         public DateTime UpdateDateTime { get; set; }
-        public ICollection<LedgerTxn> LedgerTxns { get; set; }
+        public ICollection<LedgerTxnData> LedgerTxns { get; set; }
 
     }
 

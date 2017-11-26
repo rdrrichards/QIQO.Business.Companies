@@ -1,11 +1,12 @@
-﻿using System;
+﻿using QIQO.Business.Core.Contracts;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace QIQO.Business.Companies.Data.Entities
 {
-    public class Employee
+    public class EmployeeData : IEntity
     {
         [Key]
         public Guid EmployeeId { get; set; }
@@ -23,10 +24,10 @@ namespace QIQO.Business.Companies.Data.Entities
         public string EmployeeLastName { get; set; }
         public DateTime? EmployeeDOB { get; set; }
         [ForeignKey("EntityId")]
-        public ICollection<Address> EmployeeAddresses { get; set; }
+        public ICollection<AddressData> EmployeeAddresses { get; set; }
         [ForeignKey("EntityId")]
-        public ICollection<EntityAttribute> EmployeeAttributes { get; set; }        
-        public EmployeeType EmployeeType { get; set; }
+        public ICollection<EntityAttributeData> EmployeeAttributes { get; set; }        
+        public EmployeeTypeData EmployeeType { get; set; }
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         [MaxLength(30, ErrorMessage = "The added user id cannot be longer than 30 characters")]
         [Required]

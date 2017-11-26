@@ -1,9 +1,10 @@
-﻿using System;
+﻿using QIQO.Business.Core.Contracts;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace QIQO.Business.Companies.Data.Entities
 {
-    public class ProductType
+    public class ProductTypeData : IEntity
     {
         [Key]
         public Guid ProductTypeId { get; set; }

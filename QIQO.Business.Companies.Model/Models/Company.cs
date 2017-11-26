@@ -1,11 +1,12 @@
-﻿using System;
+﻿using QIQO.Business.Core.Contracts;
+using System;
 using System.Collections.Generic;
 
 namespace QIQO.Business.Companies.Models
 {
-    public class Company
+    public class Company : IModel
     {
-        public Guid CompanyKey { get; set; }
+        public Guid CompanyId { get; set; }
         public string CompanyCode { get; set; }
         public string CompanyName { get; set; }
         public string CompanyDesc { get; set; }

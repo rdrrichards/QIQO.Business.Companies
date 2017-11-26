@@ -1,8 +1,9 @@
-﻿using System;
+﻿using QIQO.Business.Core.Contracts;
+using System;
 
 namespace QIQO.Business.Companies.Models
 {
-    public class FeeSchedule
+    public class FeeSchedule : IModel
     {
         public Guid FeeScheduleId { get; set; }
         public Guid CompanyId { get; set; }

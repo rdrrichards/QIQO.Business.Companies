@@ -1,8 +1,9 @@
-﻿using System;
+﻿using QIQO.Business.Core.Contracts;
+using System;
 
 namespace QIQO.Business.Companies.Models
 {
-    public class EntityType
+    public class EntityType : IModel
     {
         public Guid EntityTypeId { get; set; }
         public string EntityTypeCode { get; set; }

@@ -1,8 +1,9 @@
-﻿using System;
+﻿using QIQO.Business.Core.Contracts;
+using System;
 
 namespace QIQO.Business.Companies.Models
 {
-    public class EmployeeType
+    public class EmployeeType : IModel
     {
         public Guid EmployeeTypeId { get; set; }
         public string EmployeeTypeCode { get; set; }

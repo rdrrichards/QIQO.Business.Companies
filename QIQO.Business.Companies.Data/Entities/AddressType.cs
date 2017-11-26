@@ -1,9 +1,10 @@
-﻿using System;
+﻿using QIQO.Business.Core.Contracts;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace QIQO.Business.Companies.Data.Entities
 {
-    public class AddressType
+    public class AddressTypeData : IEntity
     {
         [Key]
         public Guid AddressTypeId { get; set; }

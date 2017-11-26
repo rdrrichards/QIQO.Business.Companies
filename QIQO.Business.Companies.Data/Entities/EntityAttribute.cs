@@ -1,18 +1,19 @@
-﻿using System;
+﻿using QIQO.Business.Core.Contracts;
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace QIQO.Business.Companies.Data.Entities
 {
-    public class EntityAttribute
+    public class EntityAttributeData : IEntity
     {
         [Key]
         public Guid AttributeId { get; set; }
         public Guid EntityId { get; set; }
         [Required]
-        public EntityType EntityType { get; set; }
+        public EntityTypeData EntityType { get; set; }
         [Required]
-        public AttributeType AttributeType { get; set; }
+        public AttributeTypeData AttributeType { get; set; }
         public string AttributeValue { get; set; }
         [MaxLength(20, ErrorMessage = "The attribute data type name cannot be longer than 20 characters")]
         public string AttributeDataType { get; set; }

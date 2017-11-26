@@ -1,9 +1,10 @@
-﻿using System;
+﻿using QIQO.Business.Core.Contracts;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace QIQO.Business.Companies.Data.Entities
 {
-    public class EmployeeType
+    public class EmployeeTypeData : IEntity
     {
         [Key]
         public Guid EmployeeTypeId { get; set; }

@@ -3,7 +3,7 @@ using QIQO.Pages.Data.Interfaces;
 
 namespace QIQO.Business.Companies.Data.Interfaces
 {
-    public interface ICompanyRepository : IRepository<Company>
+    public interface ICompanyRepository : IRepository<CompanyData>
     {
     }
 }

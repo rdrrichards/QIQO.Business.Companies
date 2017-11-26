@@ -1,8 +1,9 @@
-﻿using System;
+﻿using QIQO.Business.Core.Contracts;
+using System;
 
 namespace QIQO.Business.Companies.Models
 {
-    public class ChartOfAccount
+    public class ChartOfAccount : IModel
     {
         public Guid ChartOfAccountId { get; set; }
         public string AccountNo { get; set; }

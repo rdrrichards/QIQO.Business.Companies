@@ -1,18 +1,19 @@
-﻿using System;
+﻿using QIQO.Business.Core.Contracts;
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace QIQO.Business.Companies.Data.Entities
 {
-    public class Address
+    public class AddressData : IEntity
     {
         [Key]
         public Guid AddressId { get; set; }
-        public AddressType AddressType { get; set; }
+        public AddressTypeData AddressType { get; set; }
         [Required]
         public Guid EntityId { get; set; }
         [Required]
-        public EntityType EntityType { get; set; }
+        public EntityTypeData EntityType { get; set; }
         [MaxLength(100, ErrorMessage = "The address line cannot be longer than 100 characters")]
         [Required]
         public string AddressLine1 { get; set; }

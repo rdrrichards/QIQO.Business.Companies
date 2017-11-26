@@ -9,8 +9,4 @@
     <ProjectReference Include="..\QIQO.Business.Core\QIQO.Business.Core.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Services\" />
-  </ItemGroup>
-
 </Project>

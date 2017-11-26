@@ -27,17 +27,17 @@ namespace QIQO.Business.Companies.Data
 
         }
 
-        public async Task<IEnumerable<Company>> GetAllAsync()
+        public async Task<IEnumerable<CompanyData>> GetAllAsync()
         {
             return await _companyContext.Companies.ToListAsync();
         }
 
-        public async Task<Company> GetByIDAsync(Guid Id)
+        public async Task<CompanyData> GetByIDAsync(Guid Id)
         {
             return await _companyContext.Companies.FindAsync(Id);
         }
 
-        public async Task InsertAsync(Company entity)
+        public async Task InsertAsync(CompanyData entity)
         {
             entity.AddedDateTime = DateTime.Now;
             entity.AddedUserID = User.Identity.Name;
@@ -51,7 +51,7 @@ namespace QIQO.Business.Companies.Data
             await _companyContext.SaveChangesAsync();
         }
 
-        public void Update(Company entity)
+        public void Update(CompanyData entity)
         {
             entity.UpdateDateTime = DateTime.Now;
             entity.UpdateUserID = User.Identity.Name;

@@ -1,15 +1,16 @@
-﻿using System;
+﻿using QIQO.Business.Core.Contracts;
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace QIQO.Business.Companies.Data.Entities
 {
-    public class Product
+    public class ProductData : IEntity
     {
         [Key]
         public Guid ProductId { get; set; }
         public Guid CompanyId { get; set; }
-        public ProductType ProductType { get; set; }
+        public ProductTypeData ProductType { get; set; }
         [Required(ErrorMessage = "A product code must be provided")]
         [MaxLength(20, ErrorMessage ="A product code cannot be more than 20 characters long")]
         [Display(Name = "Product Code")]
