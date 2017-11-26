@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Security.Principal;
 
-namespace QIQO.Pages.Data.Repositories
+namespace QIQO.Business.Core
 {
     public class RepositoryBase
     {

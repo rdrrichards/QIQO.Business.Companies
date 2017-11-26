@@ -4,6 +4,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using QIQO.Business.Companies.Data.Contexts;
 using Microsoft.EntityFrameworkCore;
+using QIQO.Business.Companies.Data.Interfaces;
+using QIQO.Business.Companies.Data;
+using QIQO.Business.Companies.Model.Interfaces;
+using QIQO.Business.Companies.Model.Proxies;
+using Microsoft.AspNetCore.Http;
 
 namespace QIQO.Business.Companies
 {
@@ -31,7 +36,9 @@ namespace QIQO.Business.Companies
             });
 
             services.AddDbContext<CompanyContext>(option => option.UseSqlServer(Configuration.GetConnectionString("CompanyManagement")));
-
+            services.AddTransient<ICompanyRepository, CompanyRepository>();
+            services.AddTransient<ICompanyManager, CompanyManager>();
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddMvc();
         }
 
