@@ -1,6 +1,7 @@
 ﻿
 using QIQO.Business.Companies.Data.Entities;
 using QIQO.Business.Core.Contracts;
+using System;
 
 namespace QIQO.Business.Companies.Models
 {
@@ -9,7 +10,7 @@ namespace QIQO.Business.Companies.Models
         public AttributeType(AttributeTypeData attributeTypeData)
         {
             if (attributeTypeData == null) throw new System.ArgumentNullException(nameof(attributeTypeData));
-            AttributeTypeKey = attributeTypeData.AttributeTypeKey;
+            AttributeTypeId = attributeTypeData.AttributeTypeId;
             AttributeDataTypeKey = (QIQOAttributeDataType)attributeTypeData.AttributeDataTypeKey;
             AttributeDefaultFormat = attributeTypeData.AttributeDefaultFormat;
             AttributeTypeCode = attributeTypeData.AttributeTypeCode;
@@ -20,7 +21,7 @@ namespace QIQO.Business.Companies.Models
         public AttributeType(AttributeType attributeType)
         {
             if (attributeType == null) throw new System.ArgumentNullException(nameof(attributeType));
-            AttributeTypeKey = attributeType.AttributeTypeKey;
+            AttributeTypeId = attributeType.AttributeTypeId;
             AttributeDataTypeKey = attributeType.AttributeDataTypeKey;
             AttributeDefaultFormat = attributeType.AttributeDefaultFormat;
             AttributeTypeCode = attributeType.AttributeTypeCode;
@@ -29,7 +30,7 @@ namespace QIQO.Business.Companies.Models
             AttributeTypeDesc = attributeType.AttributeTypeDesc;
         }
 
-        public int AttributeTypeKey { get; private set; }
+        public Guid AttributeTypeId { get; private set; }
         public QIQOAttributeDataType AttributeDataTypeKey { get; private set; }
         public string AttributeDefaultFormat { get; private set; }
         public string AttributeTypeCode { get; private set; }

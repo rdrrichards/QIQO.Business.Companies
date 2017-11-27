@@ -1,4 +1,5 @@
 ﻿using QIQO.Business.Core.Contracts;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace QIQO.Business.Companies.Data.Entities
@@ -6,7 +7,7 @@ namespace QIQO.Business.Companies.Data.Entities
     public class AttributeTypeData : IEntity
     {
         [Key]
-        public int AttributeTypeKey { get; set; }
+        public Guid AttributeTypeId { get; set; }
         public QIQOAttributeDataType AttributeDataTypeKey { get; set; }
         public string AttributeDefaultFormat { get; set; }
         [Required]

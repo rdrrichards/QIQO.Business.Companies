@@ -39,6 +39,10 @@ namespace QIQO.Business.Companies.Data
                     .ThenInclude(a => a.AddressType)
                 .Include(c => c.CompanyAddresses)
                     .ThenInclude(e => e.EntityType)
+                .Include(c => c.CompanyAttributes)
+                    .ThenInclude(a => a.AttributeType)
+                .Include(c => c.CompanyAttributes)
+                    .ThenInclude(e => e.EntityType)
                 .SingleAsync(c => c.CompanyId == Id);
         }
 
