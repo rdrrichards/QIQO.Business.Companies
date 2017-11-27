@@ -6,15 +6,9 @@ namespace QIQO.Business.Companies.Model.Services
 {
     public class CompanyEntityService : ICompanyEntityService
     {
-        public Company Map(CompanyData comp_data)
+        public Company Map(CompanyData compData)
         {
-            return new Company()
-            {
-                CompanyId = comp_data.CompanyId,
-                CompanyCode = comp_data.CompanyCode,
-                CompanyName = comp_data.CompanyName,
-                CompanyDesc = comp_data.CompanyDesc
-            };
+            return new Company(compData);
         }
 
         public CompanyData Map(Company company)

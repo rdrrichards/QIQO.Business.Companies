@@ -1,16 +1,39 @@
-﻿using QIQO.Business.Core.Contracts;
+﻿using QIQO.Business.Companies.Data.Entities;
+using QIQO.Business.Core.Contracts;
 using System;
 
 namespace QIQO.Business.Companies.Models
 {
     public class EntityAttribute : IModel
     {
-        public Guid AttributeId { get; set; }
-        public Guid EntityId { get; set; }
-        public EntityType EntityType => new EntityType();
-        public AttributeType AttributeType => new AttributeType();
-        public string AttributeValue { get; set; }
-        public string AttributeDataType { get; set; }
-        public string AttributeDisplayFormat { get; set; }
+        public EntityAttribute(EntityAttributeData entityAttributeData)
+        {
+            if (entityAttributeData == null) throw new ArgumentNullException(nameof(entityAttributeData));
+            AttributeId = entityAttributeData.AttributeId;
+            EntityId = entityAttributeData.EntityId;
+            AttributeValue = entityAttributeData.AttributeValue;
+            AttributeDataType = entityAttributeData.AttributeDataType;
+            AttributeDisplayFormat = entityAttributeData.AttributeDisplayFormat;
+            EntityType = new EntityType(entityAttributeData.EntityType);
+            AttributeType = new AttributeType(entityAttributeData.AttributeType);
+        }
+        public EntityAttribute(EntityAttribute entityAttribute)
+        {
+            if (entityAttribute == null) throw new ArgumentNullException(nameof(entityAttribute));
+            AttributeId = entityAttribute.AttributeId;
+            EntityId = entityAttribute.EntityId;
+            AttributeValue = entityAttribute.AttributeValue;
+            AttributeDataType = entityAttribute.AttributeDataType;
+            AttributeDisplayFormat = entityAttribute.AttributeDisplayFormat;
+            EntityType = new EntityType(entityAttribute.EntityType);
+            AttributeType = new AttributeType(entityAttribute.AttributeType);
+        }
+        public Guid AttributeId { get; private set; }
+        public Guid EntityId { get; private set; }
+        public EntityType EntityType { get; private set; } = new EntityType(new EntityTypeData());
+        public AttributeType AttributeType { get; private set; } = new AttributeType(new AttributeTypeData());
+        public string AttributeValue { get; private set; }
+        public string AttributeDataType { get; private set; }
+        public string AttributeDisplayFormat { get; private set; }
     }
 }
