@@ -8,7 +8,7 @@ namespace QIQO.Business.Companies.Models
     {
         public Guid ProductId { get; set; }
         public Guid CompanyId { get; set; }
-        public ProductType ProductType { get; set; }
+        public ProductType ProductType => new ProductType();
         public string ProductCode { get; set; }
         public string ProductName { get; set; }
         public string ProductDesc { get; set; }

@@ -14,4 +14,5 @@ namespace QIQO.Business.Companies.Model.Interfaces
         Task UpdateAsync(T entity);
     }
     public interface ICompanyManager : IManager<Company> { }
+    public interface IAddressManager : IManager<Company> { }
 }

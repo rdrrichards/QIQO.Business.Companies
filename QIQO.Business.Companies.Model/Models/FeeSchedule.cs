@@ -12,6 +12,6 @@ namespace QIQO.Business.Companies.Models
         public string FeeScheduleTypeCode { get; set; }
         public decimal FeeScheduleValue { get; set; }
         public string ProductDesc { get; set; }
-        public Product Product { get; set; }
+        public Product Product => new Product();
     }
 }

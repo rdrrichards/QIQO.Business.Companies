@@ -22,7 +22,12 @@ namespace QIQO.Business.Companies.Model.Proxies
 
         public async Task<IEnumerable<Company>> GetAllAsync() => _companyEntityService.Map(await _companyRepository.GetAllAsync());
 
-        public async Task<Company> GetByIDAsync(Guid Id) => _companyEntityService.Map(await _companyRepository.GetByIDAsync(Id));
+        public async Task<Company> GetByIDAsync(Guid Id)
+        {
+            var compData =_companyEntityService.Map(await _companyRepository.GetByIDAsync(Id));
+            // compData.CompanyAddresses.AddRange();
+            return compData;
+        }
 
         public async Task InsertAsync(Company entity) => await _companyRepository.InsertAsync(_companyEntityService.Map(entity));
 

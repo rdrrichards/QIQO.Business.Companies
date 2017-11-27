@@ -17,8 +17,8 @@ namespace QIQO.Business.Companies.Models
         public string EmployeeFullNameLF => $"{EmployeeLastName} {EmployeeFirstName}";
         public string EmployeeFullNameLFM => $"{EmployeeLastName} {EmployeeMI} {EmployeeFirstName}";
         public DateTime? EmployeeDOB { get; set; }
-        public List<Address> Addresses { get; set; }
-        public List<EntityAttribute> EmployeeAttributes { get; set; }
+        public List<Address> Addresses => new List<Address>();
+        public List<EntityAttribute> EmployeeAttributes => new List<EntityAttribute>();
         public EmployeeType EmployeeType { get; set; }
         public Guid ParentEmployeeId { get; set; }
         public string EmployeeTitle { get; set; }

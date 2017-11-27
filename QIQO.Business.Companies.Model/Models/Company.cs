@@ -10,12 +10,12 @@ namespace QIQO.Business.Companies.Models
         public string CompanyCode { get; set; }
         public string CompanyName { get; set; }
         public string CompanyDesc { get; set; }
-        public List<Employee> Employees { get; set; }
-        public List<ChartOfAccount> GLAccounts { get; set; }
-        public List<FeeSchedule> FeeSchedules { get; set; }
-        public List<Ledger> Ledgers { get; set; }
-        public List<EntityAttribute> CompanyAttributes { get; set; }
-        public List<Address> CompanyAddresses { get; set; }
-        public List<Product> Products { get; set; }
+        public List<Employee> Employees => new List<Employee>();
+        public List<ChartOfAccount> GLAccounts => new List<ChartOfAccount>();
+        public List<FeeSchedule> FeeSchedules => new List<FeeSchedule>();
+        public List<Ledger> Ledgers => new List<Ledger>();
+        public List<EntityAttribute> CompanyAttributes => new List<EntityAttribute>();
+        public List<Address> CompanyAddresses => new List<Address>();
+        public List<Product> Products => new List<Product>();
     }
 }
