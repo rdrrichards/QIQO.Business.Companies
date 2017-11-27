@@ -34,7 +34,7 @@ namespace QIQO.Business.Companies.Data
 
         public async Task<CompanyData> GetByIDAsync(Guid Id)
         {
-            return await _companyContext.Companies.FindAsync(Id);
+            return await _companyContext.Companies.Include("GLAccounts").SingleAsync(c => c.CompanyId == Id);
         }
 
         public async Task InsertAsync(CompanyData entity)

@@ -52,7 +52,7 @@ namespace QIQO.Business.Companies.Data.Contexts
             modelBuilder.Entity<AddressData>().Property(p => p.AddedUserID).HasDefaultValueSql("SUSER_NAME()");
             modelBuilder.Entity<AddressData>().Property(p => p.UpdateUserID).HasDefaultValueSql("SUSER_NAME()");
 
-            modelBuilder.Entity<ChartOfAccountData>().HasAlternateKey(p => p.AccountNo);
+            modelBuilder.Entity<ChartOfAccountData>().HasAlternateKey("AccountNo", "CompanyId");
             modelBuilder.Entity<ChartOfAccountData>().Property(p => p.AddedDateTime).HasDefaultValueSql("GETDATE()");
             modelBuilder.Entity<ChartOfAccountData>().Property(p => p.UpdateDateTime).HasDefaultValueSql("GETDATE()");
             modelBuilder.Entity<ChartOfAccountData>().Property(p => p.AddedUserID).HasDefaultValueSql("SUSER_NAME()");

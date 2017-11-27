@@ -38,7 +38,7 @@ namespace QIQO.Business.Companies.Models
         public string LedgeCode { get; set; }
         public string LedgeName { get; set; }
         public string LedgeDesc { get; set; }
-        public List<LedgerTxn> LedgerTxns => new List<LedgerTxn>();
+        public List<LedgerTxn> LedgerTxns { get; private set; } = new List<LedgerTxn>();
 
         public void SetLedgerTxn(LedgerTxnData txnData)
         {

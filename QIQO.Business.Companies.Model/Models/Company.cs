@@ -58,13 +58,13 @@ namespace QIQO.Business.Companies.Models
         public string CompanyCode { get; private set; }
         public string CompanyName { get; private set; }
         public string CompanyDesc { get; private set; }
-        public List<Employee> Employees => new List<Employee>();
-        public List<ChartOfAccount> GLAccounts => new List<ChartOfAccount>();
-        public List<FeeSchedule> FeeSchedules => new List<FeeSchedule>();
-        public List<Ledger> Ledgers => new List<Ledger>();
-        public List<EntityAttribute> CompanyAttributes => new List<EntityAttribute>();
-        public List<Address> CompanyAddresses => new List<Address>();
-        public List<Product> Products => new List<Product>();
+        public List<Employee> Employees { get; private set; } = new List<Employee>();
+        public List<ChartOfAccount> GLAccounts { get; private set; } = new List<ChartOfAccount>();
+        public List<FeeSchedule> FeeSchedules { get; private set; } = new List<FeeSchedule>();
+        public List<Ledger> Ledgers { get; private set; } = new List<Ledger>();
+        public List<EntityAttribute> CompanyAttributes { get; private set; } = new List<EntityAttribute>();
+        public List<Address> CompanyAddresses { get; private set; } = new List<Address>();
+        public List<Product> Products { get; private set; } = new List<Product>();
 
         public void SetAddress(AddressData addressData)
         {

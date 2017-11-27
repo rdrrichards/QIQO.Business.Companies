@@ -12,7 +12,7 @@ namespace QIQO.Business.Companies.Data.Entities
         [MaxLength(20, ErrorMessage = "The account number cannot be longer than 20 characters")]
         [Required]
         public string AccountNo { get; set; }
-        [MaxLength(10, ErrorMessage = "The account type cannot be longer than 10 characters")]
+        [MaxLength(30, ErrorMessage = "The account type cannot be longer than 10 characters")]
         [Required]
         public string AccountType { get; set; }
         [MaxLength(50, ErrorMessage = "The account name cannot be longer than 50 characters")]

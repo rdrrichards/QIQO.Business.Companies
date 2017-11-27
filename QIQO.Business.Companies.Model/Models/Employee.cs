@@ -63,8 +63,8 @@ namespace QIQO.Business.Companies.Models
         public string EmployeeFullNameLF => $"{EmployeeLastName} {EmployeeFirstName}";
         public string EmployeeFullNameLFM => $"{EmployeeLastName} {EmployeeMI} {EmployeeFirstName}";
         public DateTime? EmployeeDOB { get; private set; }
-        public List<Address> EmployeeAddresses => new List<Address>();
-        public List<EntityAttribute> EmployeeAttributes => new List<EntityAttribute>();
+        public List<Address> EmployeeAddresses { get; private set; } = new List<Address>();
+        public List<EntityAttribute> EmployeeAttributes { get; private set; } = new List<EntityAttribute>();
         public EmployeeType EmployeeType { get; private set; }
         public Guid ParentEmployeeId { get; private set; }
         public string EmployeeTitle { get; private set; }
