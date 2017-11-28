@@ -33,11 +33,20 @@ namespace QIQO.Business.Companies.Models
             if (ledger.LedgerTxns != null)
                 foreach (var txn in ledger.LedgerTxns) SetLedgerTxn(txn);
         }
-        public Guid LedgerId { get; set; }
-        public Guid CompanyId { get; set; }
-        public string LedgeCode { get; set; }
-        public string LedgeName { get; set; }
-        public string LedgeDesc { get; set; }
+        public Ledger(Guid ledgerId, Guid companyId, string ledgeCode, string ledgeName, string ledgeDesc, List<LedgerTxn> transactions)
+        {
+            LedgerId = ledgerId;
+            CompanyId = companyId;
+            LedgeCode = ledgeCode;
+            LedgeName = ledgeName;
+            LedgeDesc = ledgeDesc;
+            LedgerTxns = transactions;
+        }
+        public Guid LedgerId { get; private set; }
+        public Guid CompanyId { get; private set; }
+        public string LedgeCode { get; private set; }
+        public string LedgeName { get; private set; }
+        public string LedgeDesc { get; private set; }
         public List<LedgerTxn> LedgerTxns { get; private set; } = new List<LedgerTxn>();
 
         public void SetLedgerTxn(LedgerTxnData txnData)

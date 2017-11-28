@@ -52,6 +52,30 @@ namespace QIQO.Business.Companies.Models
             if (employee.EmployeeAttributes != null)
                 foreach (var attribute in employee.EmployeeAttributes) SetEntityAttribute(attribute);
         }
+
+        public Employee(Guid employeeId, Guid companyId, QIQOEmployeeType companyRoleType, string employeeCode, string employeeFirstName, 
+            string employeeLastName, string employeeMI, DateTime? employeeDOB, string employeeTitle, DateTime startDate, DateTime endDate, 
+            Guid parentEmployeeId, EmployeeType employeeType, List<Address> employeeAddresses, List<EntityAttribute> employeeAttributes,
+            string comment)
+        {
+            EmployeeId = employeeId;
+            CompanyId = companyId;
+            CompanyRoleType = companyRoleType;
+            EmployeeCode = employeeCode;
+            EmployeeFirstName = employeeFirstName;
+            EmployeeLastName = employeeLastName;
+            EmployeeMI = employeeMI;
+            EmployeeDOB = employeeDOB;
+            EmployeeTitle = employeeTitle;
+            StartDate = startDate;
+            EndDate = endDate;
+            ParentEmployeeId = parentEmployeeId;
+            EmployeeType = employeeType;
+            EmployeeAddresses = employeeAddresses;
+            EmployeeAttributes = employeeAttributes;
+            Comment = comment;
+        }
+
         public Guid EmployeeId { get; private set; }
         public Guid CompanyId { get; private set; }
         public string EmployeeCode { get; private set; }

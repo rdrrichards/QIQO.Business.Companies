@@ -51,7 +51,7 @@ namespace QIQO.Business.Companies.Controllers
             // call something to map the vm to a model, then insert (via model proxy)
             await ExecuteHandledOperationAsync(() =>
             {
-                // _companyManager.InsertAsync(value);
+                _companyManager.InsertAsync(value.GetCompany());
             });
         }
 
@@ -62,7 +62,7 @@ namespace QIQO.Business.Companies.Controllers
             // call something to map the vm to a model, then update (via model proxy)
             await ExecuteHandledOperationAsync(() =>
             {
-                // _companyManager.UpdateAsync(value);
+                _companyManager.UpdateAsync(value.GetCompany());
             });
         }
 

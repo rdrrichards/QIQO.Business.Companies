@@ -24,6 +24,14 @@ namespace QIQO.Business.Companies.Models
             AddressTypeCategory = addressType.AddressTypeCategory;
             AddressTypeDesc = addressType.AddressTypeDesc;
         }
+        public AddressType(Guid addressTypeId, string addressTypeCode, string addressTypeName, string addressTypeDesc, string addressTypeCategory)
+        {
+            AddressTypeId = addressTypeId;
+            AddressTypeCode = addressTypeCode;
+            AddressTypeName = addressTypeName;
+            AddressTypeCategory = addressTypeCategory;
+            AddressTypeDesc = addressTypeDesc;
+        }
         public Guid AddressTypeId { get; private set; }
         public string AddressTypeCode { get; private set; }
         public string AddressTypeCategory { get; private set; }

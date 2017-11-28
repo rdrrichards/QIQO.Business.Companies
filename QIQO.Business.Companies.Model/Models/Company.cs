@@ -54,6 +54,31 @@ namespace QIQO.Business.Companies.Models
             if (company.Products != null)
                 foreach (var product in company.Products) SetProduct(product);
         }
+        public Company(Guid companyId, string companyCode, string companyName, string companyDesc, List<Address> companyAddresses, 
+            List<EntityAttribute> companyAttributes, List<Employee> companyEmployees, List<ChartOfAccount> companyGLAccounts,
+            List<FeeSchedule> companyFeeSchedules, List<Ledger> companyLedgers, List<Product> companyProducts)
+        {
+            if (companyId == null) throw new ArgumentNullException(nameof(companyId));
+            CompanyId = companyId;
+            CompanyCode = companyCode;
+            CompanyName = companyName;
+            CompanyDesc = companyDesc;
+
+            if (companyAddresses != null)
+                foreach (var address in companyAddresses) SetAddress(address);
+            if (companyAttributes != null)
+                foreach (var attribute in companyAttributes) SetEntityAttribute(attribute);
+            if (companyEmployees != null)
+                foreach (var employee in companyEmployees) SetEmployee(employee);
+            if (companyGLAccounts != null)
+                foreach (var account in companyGLAccounts) SetChartOfAccount(account);
+            if (companyFeeSchedules != null)
+                foreach (var schedule in companyFeeSchedules) SetFeeSchedule(schedule);
+            if (companyLedgers != null)
+                foreach (var ledger in companyLedgers) SetLedger(ledger);
+            if (companyProducts != null)
+                foreach (var product in companyProducts) SetProduct(product);
+        }
         public Guid CompanyId { get; private set; }
         public string CompanyCode { get; private set; }
         public string CompanyName { get; private set; }

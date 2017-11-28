@@ -34,6 +34,20 @@ namespace QIQO.Business.Companies.Models
             Debit = ledgerTxn.Debit;
             LedgerTxnNum = ledgerTxn.LedgerTxnNum;
         }
+        public LedgerTxn(Guid ledgerTxnId, Guid ledgerId, string comment, string accountFrom, string accountTo, DateTime entryDate, DateTime postDate,
+            decimal credit, decimal debit, int ledgerTxnNum)
+        {
+            LedgerTxnId = ledgerTxnId;
+            LedgerId = ledgerId;
+            Comment = comment;
+            AccountFrom = accountFrom;
+            AccountTo = accountTo;
+            EntryDate = entryDate;
+            PostDate = postDate;
+            Credit = credit;
+            Debit = debit;
+            LedgerTxnNum = ledgerTxnNum;
+        }
         public Guid LedgerTxnId { get; private set; }
         public Guid LedgerId { get; private set; }
         public string Comment { get; private set; }

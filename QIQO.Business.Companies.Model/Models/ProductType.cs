@@ -24,6 +24,16 @@ namespace QIQO.Business.Companies.Models
             ProductTypeName = productType.ProductTypeName;
             ProductTypeDesc = productType.ProductTypeDesc;
         }
+
+        public ProductType(Guid productTypeId, string productTypeCode, string productTypeName, string productTypeDesc, string productTypeCategory)
+        {
+            ProductTypeId = productTypeId;
+            ProductTypeCode = productTypeCode;
+            ProductTypeName = productTypeName;
+            ProductTypeDesc = productTypeDesc;
+            ProductTypeCategory = productTypeCategory;
+        }
+
         public Guid ProductTypeId { get; private set; }
         public string ProductTypeCode { get; private set; }
         public string ProductTypeCategory { get; private set; }

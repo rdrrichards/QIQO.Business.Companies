@@ -24,6 +24,14 @@ namespace QIQO.Business.Companies.Models
             EmployeeTypeName = employeeTypeData.EmployeeTypeName;
             EmployeeTypeDesc = employeeTypeData.EmployeeTypeDesc;
         }
+        public EmployeeType(Guid employeeTypeId, string employeeTypeCode, string employeeTypeName, string employeeTypeDesc, string employeeTypeCategory)
+        {
+            EmployeeTypeId = employeeTypeId;
+            EmployeeTypeCode = employeeTypeCode;
+            EmployeeTypeCategory = employeeTypeCategory;
+            EmployeeTypeName = employeeTypeName;
+            EmployeeTypeDesc = employeeTypeDesc;
+        }
         public Guid EmployeeTypeId { get; private set; }
         public string EmployeeTypeCode { get; private set; }
         public string EmployeeTypeCategory { get; private set; }

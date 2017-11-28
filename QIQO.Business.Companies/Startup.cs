@@ -37,9 +37,12 @@ namespace QIQO.Business.Companies
             });
 
             services.AddDbContext<CompanyContext>(option => option.UseSqlServer(Configuration.GetConnectionString("CompanyManagement")));
-            services.AddTransient<ICompanyRepository, CompanyRepository>();
-            services.AddTransient<ICompanyManager, CompanyManager>();
+            services.AddScoped<ICompanyRepository, CompanyRepository>();
+            services.AddScoped<ICompanyManager, CompanyManager>();
             services.AddTransient<ICompanyEntityService, CompanyEntityService>();
+            services.AddTransient<IAddressEntityService, AddressEntityService>();
+            services.AddTransient<IAddressTypeEntityService, AddressTypeEntityService>();
+            services.AddTransient<IEntityTypeEntityService, EntityTypeEntityService>();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddMvc();
         }

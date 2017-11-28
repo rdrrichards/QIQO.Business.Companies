@@ -24,6 +24,14 @@ namespace QIQO.Business.Companies.Models
             EntityTypeDesc = entityType.EntityTypeDesc;
             EntityTypeCategory = entityType.EntityTypeCategory;
         }
+        public EntityType(Guid entityTypeId, string entityTypeCode, string entityTypeName, string entityTypeDesc, string entityTypeCategory)
+        {
+            EntityTypeId = entityTypeId;
+            EntityTypeCode = entityTypeCode;
+            EntityTypeName = entityTypeName;
+            EntityTypeDesc = entityTypeDesc;
+            EntityTypeCategory = entityTypeCategory;
+        }
 
         public Guid EntityTypeId { get; private set; }
         public string EntityTypeCode { get; private set; }

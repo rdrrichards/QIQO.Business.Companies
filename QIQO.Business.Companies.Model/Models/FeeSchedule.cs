@@ -30,6 +30,18 @@ namespace QIQO.Business.Companies.Models
             ProductDesc = feeSchedule.ProductDesc;
             SetProduct(feeSchedule.Product);
         }
+        public FeeSchedule(Guid feeScheduleId, Guid companyId, string feeScheduleTypeCode, decimal feeScheduleValue,
+            DateTime feeScheduleStartDate, DateTime feeScheduleEndDate, Product product, string productDesc)
+        {
+            FeeScheduleId = feeScheduleId;
+            CompanyId = companyId;
+            FeeScheduleStartDate = feeScheduleStartDate;
+            FeeScheduleEndDate = feeScheduleEndDate;
+            FeeScheduleTypeCode = feeScheduleTypeCode;
+            FeeScheduleValue = feeScheduleValue;
+            ProductDesc = productDesc;
+            SetProduct(product);
+        }
         public Guid FeeScheduleId { get; private set; }
         public Guid CompanyId { get; private set; }
         public DateTime FeeScheduleStartDate { get; private set; }

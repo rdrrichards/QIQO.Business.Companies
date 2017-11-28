@@ -28,6 +28,19 @@ namespace QIQO.Business.Companies.Models
             BalanceType = chartOfAccount.BalanceType;
             BankAccountFlag = chartOfAccount.BankAccountFlag;
         }
+
+        public ChartOfAccount(Guid chartOfAccountId, Guid companyId, string accountNo, string accountName,
+            string accountType, string balanceType, bool bankAccountFlag)
+        {
+            ChartOfAccountId = chartOfAccountId;
+            CompanyId = companyId;
+            AccountNo = accountNo;
+            AccountName = accountName;
+            AccountType = accountType;
+            BalanceType = balanceType;
+            BankAccountFlag = bankAccountFlag;
+        }
+
         public Guid ChartOfAccountId { get; private set; }
         public string AccountNo { get; private set; }
         public string AccountType { get; private set; }

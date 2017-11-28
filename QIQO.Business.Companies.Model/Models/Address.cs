@@ -47,6 +47,27 @@ namespace QIQO.Business.Companies.Models
             SetAddressType(address.AddressType);
             SetEntityType(address.EntityType);
         }
+        public Address(Guid addressId, string addressLine1, string addressLine2, string addressLine3, string addressLine4, string addressCity,
+            string addressState, string addressPostalCode, string addressCounty, string addressCountry, bool addressActiveFlag, bool addressDefaultFlag,
+            string addressNotes, Guid entityId, AddressType addressType, EntityType entityType)
+        {
+            AddressId = addressId;
+            AddressLine1 = addressLine1;
+            AddressLine2 = addressLine2;
+            AddressLine3 = addressLine3;
+            AddressLine4 = addressLine4;
+            AddressCity = addressCity;
+            AddressState = addressState;
+            AddressPostalCode = addressPostalCode;
+            AddressActiveFlag = addressActiveFlag;
+            AddressCounty = addressCounty;
+            AddressCountry = addressCountry;
+            AddressDefaultFlag = addressDefaultFlag;
+            AddressNotes = addressNotes;
+            EntityId = entityId;
+            SetAddressType(addressType);
+            SetEntityType(entityType);
+        }
         public Guid AddressId { get; private set; }
         public AddressType AddressType { get; private set; } = new AddressType(new AddressTypeData());
         public Guid EntityId { get; private set; }

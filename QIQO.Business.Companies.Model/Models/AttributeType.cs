@@ -29,6 +29,17 @@ namespace QIQO.Business.Companies.Models
             AttributeTypeName = attributeType.AttributeTypeName;
             AttributeTypeDesc = attributeType.AttributeTypeDesc;
         }
+        public AttributeType(Guid attributeTypeId, QIQOAttributeDataType attributeDataTypeKey, string attributeDefaultFormat, 
+            string attributeTypeCode, string attributeTypeName, string attributeTypeDesc, string attributeTypeCategory)
+        {
+            AttributeTypeId = attributeTypeId;
+            AttributeDataTypeKey =  attributeDataTypeKey;
+            AttributeDefaultFormat = attributeDefaultFormat;
+            AttributeTypeCode = attributeTypeCode;
+            AttributeTypeCategory = attributeTypeCategory;
+            AttributeTypeName = attributeTypeName;
+            AttributeTypeDesc = attributeTypeDesc;
+        }
 
         public Guid AttributeTypeId { get; private set; }
         public QIQOAttributeDataType AttributeDataTypeKey { get; private set; }

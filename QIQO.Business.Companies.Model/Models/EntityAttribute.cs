@@ -28,6 +28,17 @@ namespace QIQO.Business.Companies.Models
             EntityType = new EntityType(entityAttribute.EntityType);
             AttributeType = new AttributeType(entityAttribute.AttributeType);
         }
+        public EntityAttribute(Guid entityAttributeId, Guid entityId, string attributeValue, string attributeDataType, string attributeDisplayFormat,
+            EntityType entityType, AttributeType attributeType)
+        {
+            AttributeId = entityAttributeId;
+            EntityId = entityId;
+            AttributeValue = attributeValue;
+            AttributeDataType = attributeDataType;
+            AttributeDisplayFormat = attributeDisplayFormat;
+            EntityType = new EntityType(entityType);
+            AttributeType = new AttributeType(attributeType);
+        }
         public Guid AttributeId { get; private set; }
         public Guid EntityId { get; private set; }
         public EntityType EntityType { get; private set; } = new EntityType(new EntityTypeData());

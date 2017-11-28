@@ -12,7 +12,7 @@ namespace QIQO.Business.Companies.Models
             if (productData == null) throw new ArgumentNullException(nameof(productData));
             ProductId = productData.ProductId;
             CompanyId = productData.CompanyId;
-            ProductCost = productData.ProductCost;
+            ProductCode = productData.ProductCode;
             ProductName = productData.ProductName;
             ProductDesc = productData.ProductDesc;
             ProductNameShort = productData.ProductNameShort;
@@ -30,7 +30,7 @@ namespace QIQO.Business.Companies.Models
             if (product == null) throw new ArgumentNullException(nameof(product));
             ProductId = product.ProductId;
             CompanyId = product.CompanyId;
-            ProductCost = product.ProductCost;
+            ProductCode = product.ProductCode;
             ProductName = product.ProductName;
             ProductDesc = product.ProductDesc;
             ProductNameShort = product.ProductNameShort;
@@ -42,6 +42,26 @@ namespace QIQO.Business.Companies.Models
             ProductCost = product.ProductCost;
             SetProductType(product.ProductType);
         }
+
+        public Product(Guid productId, Guid companyId, string productCode, string productName, string productNameShort,
+            string productNameLong, string productDesc, string productImagePath, decimal productBasePrice, decimal productCost,
+            int productDefaultQuantity, string productIncomeAccount, ProductType productType)
+        {
+            ProductId = productId;
+            CompanyId = companyId;
+            ProductCode = productCode;
+            ProductName = productName;
+            ProductNameShort = productNameShort;
+            ProductNameLong = productNameLong;
+            ProductDesc = productDesc;
+            ProductImagePath = productImagePath;
+            ProductBasePrice = productBasePrice;
+            ProductCost = productCost;
+            ProductDefaultQuantity = productDefaultQuantity;
+            ProductIncomeAccount = productIncomeAccount;
+            ProductType = productType;
+        }
+
         public Guid ProductId { get; private set; }
         public Guid CompanyId { get; private set; }
         public ProductType ProductType { get; private set; } = new ProductType(new ProductTypeData());
