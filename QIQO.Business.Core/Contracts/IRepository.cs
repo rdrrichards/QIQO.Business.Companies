@@ -13,7 +13,7 @@ namespace QIQO.Pages.Data.Interfaces
         Task InsertAsync(T entity);
         Task DeleteAsync(Guid Id);
         void Update(T entity);
-        Task SaveAsync();
+        void SaveAsync();
     }
 
     public interface IReadOnlyRepository<T> : IRepository

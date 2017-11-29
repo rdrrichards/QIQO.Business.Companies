@@ -62,7 +62,7 @@ namespace QIQO.Business.Companies.Controllers
             // call something to map the vm to a model, then update (via model proxy)
             await ExecuteHandledOperationAsync(() =>
             {
-                _companyManager.UpdateAsync(value.GetCompany());
+                _companyManager.Update(value.GetCompany());
             });
         }
 

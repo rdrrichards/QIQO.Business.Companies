@@ -26,10 +26,10 @@ namespace QIQO.Business.Companies.Model.Proxies
 
         public async Task InsertAsync(Company entity) => await _companyRepository.InsertAsync(_companyEntityService.Map(entity));
 
-        public async Task UpdateAsync(Company entity)
+        public void Update(Company entity)
         {
             _companyRepository.Update(_companyEntityService.Map(entity));
-            await _companyRepository.SaveAsync();
+            _companyRepository.SaveAsync();
         }
     }
 }

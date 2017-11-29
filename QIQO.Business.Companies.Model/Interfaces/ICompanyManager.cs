@@ -11,7 +11,7 @@ namespace QIQO.Business.Companies.Model.Interfaces
         Task<T> GetByIDAsync(Guid Id);
         Task InsertAsync(T entity);
         Task DeleteAsync(Guid Id);
-        Task UpdateAsync(T entity);
+        void Update(T entity);
     }
     public interface ICompanyManager : IManager<Company> { }
 }

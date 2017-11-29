@@ -43,6 +43,7 @@ namespace QIQO.Business.Companies
             services.AddTransient<IAddressEntityService, AddressEntityService>();
             services.AddTransient<IAddressTypeEntityService, AddressTypeEntityService>();
             services.AddTransient<IEntityTypeEntityService, EntityTypeEntityService>();
+
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddMvc();
         }
