@@ -38,7 +38,9 @@ namespace QIQO.Business.Companies
 
             services.AddDbContext<CompanyContext>(option => option.UseSqlServer(Configuration.GetConnectionString("CompanyManagement")));
             services.AddScoped<ICompanyRepository, CompanyRepository>();
+            services.AddScoped<IListRepository, ListRepository>();
             services.AddScoped<ICompanyManager, CompanyManager>();
+            services.AddScoped<IListManager, ListManager>();
             services.AddTransient<ICompanyEntityService, CompanyEntityService>();
             services.AddTransient<IAddressEntityService, AddressEntityService>();
             services.AddTransient<IAddressTypeEntityService, AddressTypeEntityService>();
