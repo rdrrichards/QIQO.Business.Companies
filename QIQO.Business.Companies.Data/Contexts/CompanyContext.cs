@@ -7,6 +7,11 @@ namespace QIQO.Business.Companies.Data.Contexts
     {
         public CompanyContext(DbContextOptions<CompanyContext> options) : base(options) { }
         public DbSet<CompanyData> Companies { get; set; }
+        public DbSet<AddressTypeData> AddressTypes { get; set; }
+        public DbSet<AttributeTypeData> AttributeTypes { get; set; }
+        public DbSet<EmployeeTypeData> EmployeeTypes { get; set; }
+        public DbSet<EntityTypeData> EntityTypes { get; set; }
+        public DbSet<ProductTypeData> ProductTypes { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
