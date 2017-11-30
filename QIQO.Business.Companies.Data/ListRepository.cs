@@ -30,9 +30,14 @@ namespace QIQO.Business.Companies.Data
             throw new NotImplementedException();
         }
 
-        public async Task<IEnumerable<AddressTypeData>> GetAllAddressTypesAsync()
-        {
-            return await _companyContext.AddressTypes.ToListAsync();
-        }
+        public async Task<IEnumerable<AddressTypeData>> GetAllAddressTypesAsync() => await _companyContext.AddressTypes.ToListAsync();
+
+        public async Task<IEnumerable<AttributeTypeData>> GetAllAttributeTypesAsync() => await _companyContext.AttributeTypes.ToListAsync();
+
+        public async Task<IEnumerable<EmployeeTypeData>> GetAllEmployeeTypesAsync() => await _companyContext.EmployeeTypes.ToListAsync();
+
+        public async Task<IEnumerable<EntityTypeData>> GetAllEntityTypesAsync() => await _companyContext.EntityTypes.ToListAsync();
+
+        public async Task<IEnumerable<ProductTypeData>> GetAllProductTypesAsync() => await _companyContext.ProductTypes.ToListAsync();
     }
 }

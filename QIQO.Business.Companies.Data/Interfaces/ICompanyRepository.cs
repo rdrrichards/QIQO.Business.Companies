@@ -11,5 +11,9 @@ namespace QIQO.Business.Companies.Data.Interfaces
     public interface IListRepository : IReadOnlyRepository<AddressTypeData>
     {
         Task<IEnumerable<AddressTypeData>> GetAllAddressTypesAsync();
+        Task<IEnumerable<AttributeTypeData>> GetAllAttributeTypesAsync();
+        Task<IEnumerable<EmployeeTypeData>> GetAllEmployeeTypesAsync();
+        Task<IEnumerable<EntityTypeData>> GetAllEntityTypesAsync();
+        Task<IEnumerable<ProductTypeData>> GetAllProductTypesAsync();
     }
 }

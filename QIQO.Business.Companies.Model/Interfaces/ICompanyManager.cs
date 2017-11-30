@@ -17,5 +17,9 @@ namespace QIQO.Business.Companies.Model.Interfaces
     public interface IListManager
     {
         Task<IEnumerable<AddressType>> GetAllAddressTypeAsync();
+        Task<IEnumerable<AttributeType>> GetAllAttributeTypeAsync();
+        Task<IEnumerable<EmployeeType>> GetAllEmployeeTypeAsync();
+        Task<IEnumerable<EntityType>> GetAllEntityTypeAsync();
+        Task<IEnumerable<ProductType>> GetAllProductTypeAsync();
     }
 }

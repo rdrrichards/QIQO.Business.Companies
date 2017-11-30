@@ -41,10 +41,14 @@ namespace QIQO.Business.Companies
             services.AddScoped<IListRepository, ListRepository>();
             services.AddScoped<ICompanyManager, CompanyManager>();
             services.AddScoped<IListManager, ListManager>();
+
             services.AddTransient<ICompanyEntityService, CompanyEntityService>();
-            services.AddTransient<IAddressEntityService, AddressEntityService>();
+            services.AddTransient<IAddressEntityService, AddressEntityService>(); 
             services.AddTransient<IAddressTypeEntityService, AddressTypeEntityService>();
             services.AddTransient<IEntityTypeEntityService, EntityTypeEntityService>();
+            services.AddTransient<IAttributeTypeEntityService, AttributeTypeEntityService>();
+            services.AddTransient<IEmployeeTypeEntityService, EmployeeTypeEntityService>();
+            services.AddTransient<IProductTypeEntityService, ProductTypeEntityService>();
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddMvc();

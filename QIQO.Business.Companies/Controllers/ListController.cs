@@ -33,5 +33,61 @@ namespace QIQO.Business.Companies.Controllers
                 return ret;
             });
         }
+        // GET api/companies
+        [HttpGet("attributetypes")]
+        public async Task<IActionResult> GetAttributeTypesAsync()
+        {
+            return await ExecuteHandledOperationAsync(async () =>
+            {
+                var ret = new List<AttributeTypeViewModel>();
+                var attributes = await _listManager.GetAllAttributeTypeAsync();
+                foreach (var attribute in attributes)
+                    ret.Add(new AttributeTypeViewModel(attribute));
+
+                return ret;
+            });
+        }
+        // GET api/companies
+        [HttpGet("employeetypes")]
+        public async Task<IActionResult> GetEmployeeTypesAsync()
+        {
+            return await ExecuteHandledOperationAsync(async () =>
+            {
+                var ret = new List<EmployeeTypeViewModel>();
+                var employees = await _listManager.GetAllEmployeeTypeAsync();
+                foreach (var employee in employees)
+                    ret.Add(new EmployeeTypeViewModel(employee));
+
+                return ret;
+            });
+        }
+        // GET api/companies
+        [HttpGet("entitytypes")]
+        public async Task<IActionResult> GetEntityTypesAsync()
+        {
+            return await ExecuteHandledOperationAsync(async () =>
+            {
+                var ret = new List<EntityTypeViewModel>();
+                var entities = await _listManager.GetAllEntityTypeAsync();
+                foreach (var entity in entities)
+                    ret.Add(new EntityTypeViewModel(entity));
+
+                return ret;
+            });
+        }
+        // GET api/companies
+        [HttpGet("producttypes")]
+        public async Task<IActionResult> GetProductTypesAsync()
+        {
+            return await ExecuteHandledOperationAsync(async () =>
+            {
+                var ret = new List<ProductTypeViewModel>();
+                var products = await _listManager.GetAllProductTypeAsync();
+                foreach (var product in products)
+                    ret.Add(new ProductTypeViewModel(product));
+
+                return ret;
+            });
+        }
     }
 }
