@@ -23,9 +23,9 @@ namespace QIQO.Business.Companies.Data.Entities
         [Required]
         public string EmployeeLastName { get; set; }
         public DateTime? EmployeeDOB { get; set; }
-        [ForeignKey("EntityId")]
+        [ForeignKey("AddressEntityId")]
         public ICollection<AddressData> EmployeeAddresses { get; set; }
-        [ForeignKey("EntityId")]
+        [ForeignKey("AttributeEntityId")]
         public ICollection<EntityAttributeData> EmployeeAttributes { get; set; }        
         public EmployeeTypeData EmployeeType { get; set; }
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]

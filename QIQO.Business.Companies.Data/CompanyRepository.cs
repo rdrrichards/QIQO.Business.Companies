@@ -39,11 +39,11 @@ namespace QIQO.Business.Companies.Data
                 .Include(c => c.CompanyAddresses)
                     .ThenInclude(a => a.AddressType)
                 .Include(c => c.CompanyAddresses)
-                    .ThenInclude(e => e.EntityType)
+                    .ThenInclude(e => e.AddressEntityType)
                 .Include(c => c.CompanyAttributes)
                     .ThenInclude(a => a.AttributeType)
                 .Include(c => c.CompanyAttributes)
-                    .ThenInclude(e => e.EntityType)
+                    .ThenInclude(e => e.AttributeEntityType)
                 .SingleAsync(c => c.CompanyId == Id);
         }
 
@@ -84,6 +84,8 @@ namespace QIQO.Business.Companies.Data
                 if ((e.Entry.Entity as AddressData) != null)
                 {
                     var address = e.Entry.Entity as AddressData;
+                    //_companyContext.Entry(address).Property("AddressEntityId").IsModified = true;
+                    //_companyContext.Entry(address).Property("AddressEntityTypeId").IsModified = true;
                     _companyContext.Entry(address).Property("AddressLine1").IsModified = true;
                     _companyContext.Entry(address).Property("AddressLine2").IsModified = true;
                     _companyContext.Entry(address).Property("AddressLine3").IsModified = true;

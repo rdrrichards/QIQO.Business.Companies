@@ -23,9 +23,9 @@ namespace QIQO.Business.Companies.Models
             AddressCountry = addressData.AddressCountry;
             AddressDefaultFlag = addressData.AddressDefaultFlag;
             AddressNotes = addressData.AddressNotes;
-            EntityId = addressData.EntityId;
+            EntityId = addressData.AddressEntityId;
             SetAddressType(addressData.AddressType);
-            SetEntityType(addressData.EntityType);
+            SetEntityType(addressData.AddressEntityType);
         }
         public Address(Address address)
         {

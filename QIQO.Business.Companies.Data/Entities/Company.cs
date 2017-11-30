@@ -35,9 +35,9 @@ namespace QIQO.Business.Companies.Data.Entities
         public ICollection<ChartOfAccountData> GLAccounts { get; set; }
         public ICollection<FeeScheduleData> FeeSchedules { get; set; }
         public ICollection<LedgerData> Ledgers { get; set; }
-        [ForeignKey("EntityId")]
+        [ForeignKey("AttributeEntityId")]
         public ICollection<EntityAttributeData> CompanyAttributes { get; set; }
-        [ForeignKey("EntityId")]
+        [ForeignKey("AddressEntityId")]
         public ICollection<AddressData> CompanyAddresses { get; set; }
         public ICollection<ProductData> Products { get; set; }
 

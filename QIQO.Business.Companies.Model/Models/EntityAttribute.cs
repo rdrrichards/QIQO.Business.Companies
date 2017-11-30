@@ -10,11 +10,11 @@ namespace QIQO.Business.Companies.Models
         {
             if (entityAttributeData == null) throw new ArgumentNullException(nameof(entityAttributeData));
             AttributeId = entityAttributeData.AttributeId;
-            EntityId = entityAttributeData.EntityId;
+            EntityId = entityAttributeData.AttributeEntityId;
             AttributeValue = entityAttributeData.AttributeValue;
             AttributeDataType = entityAttributeData.AttributeDataType;
             AttributeDisplayFormat = entityAttributeData.AttributeDisplayFormat;
-            EntityType = new EntityType(entityAttributeData.EntityType);
+            EntityType = new EntityType(entityAttributeData.AttributeEntityType);
             AttributeType = new AttributeType(entityAttributeData.AttributeType);
         }
         public EntityAttribute(EntityAttribute entityAttribute)

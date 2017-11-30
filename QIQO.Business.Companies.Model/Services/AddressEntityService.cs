@@ -37,8 +37,8 @@ namespace QIQO.Business.Companies.Model.Services
                 AddressDefaultFlag = ent.AddressDefaultFlag,
                 AddressNotes = ent.AddressNotes,
                 AddressType = _addressTypeEntityService.Map(ent.AddressType),
-                EntityId = ent.EntityId,
-                EntityType = _entityTypeEntityService.Map(ent.EntityType)
+                AddressEntityId = ent.EntityId,
+                AddressEntityType = _entityTypeEntityService.Map(ent.EntityType)
             };
         }
     }

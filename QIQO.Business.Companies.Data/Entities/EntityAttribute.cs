@@ -9,9 +9,10 @@ namespace QIQO.Business.Companies.Data.Entities
     {
         [Key]
         public Guid AttributeId { get; set; }
-        public Guid EntityId { get; set; }
+        public Guid AttributeEntityId { get; set; }
         [Required]
-        public EntityTypeData EntityType { get; set; }
+        [ForeignKey("AttributeEntityTypeId")]
+        public EntityTypeData AttributeEntityType { get; set; }
         [Required]
         public AttributeTypeData AttributeType { get; set; }
         public string AttributeValue { get; set; }
