@@ -20,17 +20,17 @@ namespace QIQO.Business.Companies.Data.Entities
         public decimal FeeScheduleValue { get; set; }
         [MaxLength(150, ErrorMessage = "A product description cannot be more than 150 characters long")]
         public string ProductDesc { get; set; }
-        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [MaxLength(30, ErrorMessage = "The added user id cannot be longer than 30 characters")]
         [Required]
         public string AddedUserID { get; set; }
-        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public DateTime AddedDateTime { get; set; }
-        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [MaxLength(30, ErrorMessage = "The updated user id cannot be longer than 30 characters")]
         [Required]
         public string UpdateUserID { get; set; }
-        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public DateTime UpdateDateTime { get; set; }
         public ProductData Product { get; set; }
     }

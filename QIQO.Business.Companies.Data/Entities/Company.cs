@@ -19,17 +19,17 @@ namespace QIQO.Business.Companies.Data.Entities
         [MaxLength(255, ErrorMessage = "The company description cannot be longer than 255 characters")]
         [Required]
         public string CompanyDesc { get; set; }
-        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [MaxLength(30, ErrorMessage = "The added user id cannot be longer than 30 characters")]
         [Required]
         public string AddedUserID { get; set; }
-        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public DateTime AddedDateTime { get; set; }
-        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [MaxLength(30, ErrorMessage = "The updated user id cannot be longer than 30 characters")]
         [Required]
         public string UpdateUserID { get; set; }
-        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public DateTime UpdateDateTime { get; set; }
         public ICollection<EmployeeData> Employees { get; set; }
         public ICollection<ChartOfAccountData> GLAccounts { get; set; }

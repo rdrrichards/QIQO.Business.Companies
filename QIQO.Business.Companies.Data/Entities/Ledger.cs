@@ -18,17 +18,17 @@ namespace QIQO.Business.Companies.Data.Entities
         public string LedgeName { get; set; }
         [MaxLength(255, ErrorMessage = "The ledger description cannot be longer than 255 characters")]
         public string LedgeDesc { get; set; }
-        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [MaxLength(30, ErrorMessage = "The added user id cannot be longer than 30 characters")]
         [Required]
         public string AddedUserID { get; set; }
-        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public DateTime AddedDateTime { get; set; }
-        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [MaxLength(30, ErrorMessage = "The updated user id cannot be longer than 30 characters")]
         [Required]
         public string UpdateUserID { get; set; }
-        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public DateTime UpdateDateTime { get; set; }
         public ICollection<LedgerTxnData> LedgerTxns { get; set; }
 

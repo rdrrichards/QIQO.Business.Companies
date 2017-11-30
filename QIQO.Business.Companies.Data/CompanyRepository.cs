@@ -13,6 +13,7 @@ namespace QIQO.Business.Companies.Data
 {
     public class CompanyRepository : RepositoryBase, ICompanyRepository
     {
+        private const string _user = "Fallback User";
         private readonly CompanyContext _companyContext;
 
         public CompanyRepository(CompanyContext context, IHttpContextAccessor httpContextAccessor) : base(context, httpContextAccessor)
@@ -68,6 +69,11 @@ namespace QIQO.Business.Companies.Data
                 if ((e.Entry.Entity as CompanyData) != null)
                 {
                     e.Entry.State = EntityState.Modified;
+                    var company = e.Entry.Entity as CompanyData;
+                    _companyContext.Entry(company).Property("AddedUserID").IsModified = false;
+                    _companyContext.Entry(company).Property("AddedDateTime").IsModified = false;
+                    _companyContext.Entry(company).Property("UpdateDateTime").CurrentValue = DateTime.UtcNow;
+                    _companyContext.Entry(company).Property("UpdateUserID").CurrentValue = User.Identity.Name ?? _user;
                 }
                 if ((e.Entry.Entity as EntityTypeData) != null)
                 {
@@ -79,6 +85,11 @@ namespace QIQO.Business.Companies.Data
                 }
                 if ((e.Entry.Entity as EntityAttributeData) != null)
                 {
+                    var attribute = e.Entry.Entity as EntityAttributeData;
+                    _companyContext.Entry(attribute).Property("AddedUserID").IsModified = false;
+                    _companyContext.Entry(attribute).Property("AddedDateTime").IsModified = false;
+                    _companyContext.Entry(attribute).Property("UpdateDateTime").CurrentValue = DateTime.UtcNow;
+                    _companyContext.Entry(attribute).Property("UpdateUserID").CurrentValue = User.Identity.Name ?? _user;
                     //_companyContext.Entry(e.Entry.Entity as EntityAttributeData).Property("AttributeValue").IsModified = true;
                 }
                 if ((e.Entry.Entity as AddressData) != null)
@@ -98,6 +109,10 @@ namespace QIQO.Business.Companies.Data
                     _companyContext.Entry(address).Property("AddressNotes").IsModified = true;
                     _companyContext.Entry(address).Property("AddressDefaultFlag").IsModified = true;
                     _companyContext.Entry(address).Property("AddressActiveFlag").IsModified = true;
+                    _companyContext.Entry(address).Property("UpdateDateTime").CurrentValue = DateTime.UtcNow;
+                    _companyContext.Entry(address).Property("UpdateUserID").CurrentValue = User.Identity.Name ?? _user;
+                    _companyContext.Entry(address).Property("AddedUserID").IsModified = false;
+                    _companyContext.Entry(address).Property("AddedDateTime").IsModified = false;
                 }
             });
         }
