@@ -51,10 +51,36 @@ namespace QIQO.Business.Companies.Data
         public async Task InsertAsync(CompanyData entity)
         {
             entity.AddedDateTime = DateTime.Now;
-            entity.AddedUserID = User.Identity.Name;
+            entity.AddedUserID = User.Identity.Name ?? _user;
             entity.UpdateDateTime = DateTime.Now;
-            entity.UpdateUserID = User.Identity.Name;
+            entity.UpdateUserID = User.Identity.Name ?? _user;
+
+            foreach (var address in entity.CompanyAddresses)
+            {
+                address.AddedDateTime = DateTime.Now;
+                address.AddedUserID = User.Identity.Name ?? _user;
+                address.UpdateDateTime = DateTime.Now;
+                address.UpdateUserID = User.Identity.Name ?? _user;
+            }
+
+            //foreach (var attribute in entity.CompanyAttributes)
+            //{
+            //    attribute.AddedDateTime = DateTime.Now;
+            //    attribute.AddedUserID = User.Identity.Name ?? _user;
+            //    attribute.UpdateDateTime = DateTime.Now;
+            //    attribute.UpdateUserID = User.Identity.Name ?? _user;
+            //}
+
             await _companyContext.Companies.AddAsync(entity);
+            try
+            {
+                await _companyContext.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
         }
 
         public void SaveAsync()

@@ -70,8 +70,10 @@ namespace QIQO.Business.Companies.Models
         }
         public Guid AddressId { get; private set; }
         public AddressType AddressType { get; private set; } = new AddressType(new AddressTypeData());
+        public Guid AddressTypeId { get; private set; }
         public Guid EntityId { get; private set; }
         public EntityType EntityType { get; private set; } = new EntityType(new EntityTypeData());
+        public Guid EntityTypeId { get; private set; }
         public string AddressLine1 { get; private set; }
         public string AddressLine2 { get; private set; }
         public string AddressLine3 { get; private set; }
@@ -88,21 +90,25 @@ namespace QIQO.Business.Companies.Models
         public void SetAddressType(AddressType addressType)
         {
             AddressType = new AddressType(addressType);
+            AddressTypeId = addressType.AddressTypeId;
         }
 
         public void SetAddressType(AddressTypeData addressTypeData)
         {
             AddressType = new AddressType(addressTypeData);
+            AddressTypeId = addressTypeData.AddressTypeId;
         }
 
         public void SetEntityType(EntityType entityType)
         {
             EntityType = new EntityType(entityType);
+            EntityTypeId = entityType.EntityTypeId;
         }
 
         public void SetEntityType(EntityTypeData entityTypeData)
         {
             EntityType = new EntityType(entityTypeData);
+            EntityTypeId = entityTypeData.EntityTypeId;
         }
     }
 }

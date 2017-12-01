@@ -6,14 +6,14 @@ namespace QIQO.Business.Companies.Model.Services
 {
     public class AddressEntityService : IAddressEntityService
     {
-        private readonly IAddressTypeEntityService _addressTypeEntityService;
-        private readonly IEntityTypeEntityService _entityTypeEntityService;
+        //private readonly IAddressTypeEntityService _addressTypeEntityService;
+        //private readonly IEntityTypeEntityService _entityTypeEntityService;
 
-        public AddressEntityService(IAddressTypeEntityService addressTypeEntityService, IEntityTypeEntityService entityTypeEntityService)
-        {
-            _addressTypeEntityService = addressTypeEntityService;
-            _entityTypeEntityService = entityTypeEntityService;
-        }
+        //public AddressEntityService(IAddressTypeEntityService addressTypeEntityService, IEntityTypeEntityService entityTypeEntityService)
+        //{
+        //    _addressTypeEntityService = addressTypeEntityService;
+        //    _entityTypeEntityService = entityTypeEntityService;
+        //}
         public Address Map(AddressData ent)
         {
             return new Address(ent);
@@ -36,9 +36,11 @@ namespace QIQO.Business.Companies.Model.Services
                 AddressCountry = ent.AddressCountry,
                 AddressDefaultFlag = ent.AddressDefaultFlag,
                 AddressNotes = ent.AddressNotes,
-                AddressType = _addressTypeEntityService.Map(ent.AddressType),
+                // AddressType = _addressTypeEntityService.Map(ent.AddressType),
+                AddressTypeId = ent.AddressTypeId,
                 AddressEntityId = ent.EntityId,
-                AddressEntityType = _entityTypeEntityService.Map(ent.EntityType)
+                // AddressEntityType = _entityTypeEntityService.Map(ent.EntityType),
+                AddressEntityTypeId = ent.EntityTypeId
             };
         }
     }
