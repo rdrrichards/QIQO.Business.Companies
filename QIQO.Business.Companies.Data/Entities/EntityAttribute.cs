@@ -14,7 +14,11 @@ namespace QIQO.Business.Companies.Data.Entities
         [ForeignKey("AttributeEntityTypeId")]
         public EntityTypeData AttributeEntityType { get; set; }
         [Required]
+        public Guid AttributeEntityTypeId { get; set; }
+        [Required]
         public AttributeTypeData AttributeType { get; set; }
+        [Required]
+        public Guid AttributeTypeId { get; set; }
         public string AttributeValue { get; set; }
         [MaxLength(20, ErrorMessage = "The attribute data type name cannot be longer than 20 characters")]
         public string AttributeDataType { get; set; }

@@ -1,7 +1,6 @@
 ﻿using QIQO.Business.Companies.Data.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using QIQO.Business.Companies.Data.Entities;
 using System.Threading.Tasks;
 using QIQO.Business.Core;

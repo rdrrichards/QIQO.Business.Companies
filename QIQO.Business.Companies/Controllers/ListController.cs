@@ -4,7 +4,6 @@ using QIQO.Business.Companies.ViewModels;
 using QIQO.Business.Core;
 using Microsoft.Extensions.Logging;
 using QIQO.Business.Companies.Model.Interfaces;
-using System;
 using System.Collections.Generic;
 
 namespace QIQO.Business.Companies.Controllers

@@ -1,7 +1,6 @@
 ﻿using QIQO.Business.Companies.Data.Entities;
 using QIQO.Business.Core.Contracts;
 using System;
-using System.Collections.Generic;
 
 namespace QIQO.Business.Companies.Models
 {

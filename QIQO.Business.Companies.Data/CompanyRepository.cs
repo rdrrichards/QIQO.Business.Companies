@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using QIQO.Business.Companies.Data.Contexts;
-using System.Linq;
 
 namespace QIQO.Business.Companies.Data
 {
@@ -55,21 +54,23 @@ namespace QIQO.Business.Companies.Data
             entity.UpdateDateTime = DateTime.Now;
             entity.UpdateUserID = User.Identity.Name ?? _user;
 
-            foreach (var address in entity.CompanyAddresses)
-            {
-                address.AddedDateTime = DateTime.Now;
-                address.AddedUserID = User.Identity.Name ?? _user;
-                address.UpdateDateTime = DateTime.Now;
-                address.UpdateUserID = User.Identity.Name ?? _user;
-            }
+            if (entity.CompanyAddresses != null)
+                foreach (var address in entity.CompanyAddresses)
+                {
+                    address.AddedDateTime = DateTime.Now;
+                    address.AddedUserID = User.Identity.Name ?? _user;
+                    address.UpdateDateTime = DateTime.Now;
+                    address.UpdateUserID = User.Identity.Name ?? _user;
+                }
 
-            //foreach (var attribute in entity.CompanyAttributes)
-            //{
-            //    attribute.AddedDateTime = DateTime.Now;
-            //    attribute.AddedUserID = User.Identity.Name ?? _user;
-            //    attribute.UpdateDateTime = DateTime.Now;
-            //    attribute.UpdateUserID = User.Identity.Name ?? _user;
-            //}
+            if (entity.CompanyAttributes != null)
+                foreach (var attribute in entity.CompanyAttributes)
+                {
+                    attribute.AddedDateTime = DateTime.Now;
+                    attribute.AddedUserID = User.Identity.Name ?? _user;
+                    attribute.UpdateDateTime = DateTime.Now;
+                    attribute.UpdateUserID = User.Identity.Name ?? _user;
+                }
 
             await _companyContext.Companies.AddAsync(entity);
             try
@@ -116,7 +117,7 @@ namespace QIQO.Business.Companies.Data
                     _companyContext.Entry(attribute).Property("AddedDateTime").IsModified = false;
                     _companyContext.Entry(attribute).Property("UpdateDateTime").CurrentValue = DateTime.UtcNow;
                     _companyContext.Entry(attribute).Property("UpdateUserID").CurrentValue = User.Identity.Name ?? _user;
-                    //_companyContext.Entry(e.Entry.Entity as EntityAttributeData).Property("AttributeValue").IsModified = true;
+                    _companyContext.Entry(e.Entry.Entity as EntityAttributeData).Property("AttributeValue").IsModified = true;
                 }
                 if ((e.Entry.Entity as AddressData) != null)
                 {

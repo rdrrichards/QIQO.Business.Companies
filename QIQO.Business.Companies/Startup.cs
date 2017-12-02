@@ -45,6 +45,7 @@ namespace QIQO.Business.Companies
             services.AddTransient<ICompanyEntityService, CompanyEntityService>();
             services.AddTransient<IAddressEntityService, AddressEntityService>(); 
             services.AddTransient<IAddressTypeEntityService, AddressTypeEntityService>();
+            services.AddTransient<IEntityAttributeEntityService, EntityAttributeEntityService>();
             services.AddTransient<IEntityTypeEntityService, EntityTypeEntityService>();
             services.AddTransient<IAttributeTypeEntityService, AttributeTypeEntityService>();
             services.AddTransient<IEmployeeTypeEntityService, EmployeeTypeEntityService>();

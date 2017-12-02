@@ -1,19 +1,12 @@
 ﻿using QIQO.Business.Companies.Data.Entities;
 using QIQO.Business.Companies.Model.Interfaces;
 using QIQO.Business.Companies.Models;
+using System;
 
 namespace QIQO.Business.Companies.Model.Services
 {
     public class AddressEntityService : IAddressEntityService
     {
-        //private readonly IAddressTypeEntityService _addressTypeEntityService;
-        //private readonly IEntityTypeEntityService _entityTypeEntityService;
-
-        //public AddressEntityService(IAddressTypeEntityService addressTypeEntityService, IEntityTypeEntityService entityTypeEntityService)
-        //{
-        //    _addressTypeEntityService = addressTypeEntityService;
-        //    _entityTypeEntityService = entityTypeEntityService;
-        //}
         public Address Map(AddressData ent)
         {
             return new Address(ent);
@@ -23,7 +16,7 @@ namespace QIQO.Business.Companies.Model.Services
         {
             return new AddressData
             {
-                AddressId = ent.AddressId,
+                AddressId = ent.AddressId != default(Guid) ? ent.AddressId : Guid.NewGuid(),
                 AddressLine1 = ent.AddressLine1,
                 AddressLine2 = ent.AddressLine2,
                 AddressLine3 = ent.AddressLine3,
@@ -36,10 +29,8 @@ namespace QIQO.Business.Companies.Model.Services
                 AddressCountry = ent.AddressCountry,
                 AddressDefaultFlag = ent.AddressDefaultFlag,
                 AddressNotes = ent.AddressNotes,
-                // AddressType = _addressTypeEntityService.Map(ent.AddressType),
                 AddressTypeId = ent.AddressTypeId,
                 AddressEntityId = ent.EntityId,
-                // AddressEntityType = _entityTypeEntityService.Map(ent.EntityType),
                 AddressEntityTypeId = ent.EntityTypeId
             };
         }

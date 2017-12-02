@@ -8,10 +8,12 @@ namespace QIQO.Business.Companies.Model.Services
     public class CompanyEntityService : ICompanyEntityService
     {
         private readonly IAddressEntityService _addressEntityService;
+        private readonly IEntityAttributeEntityService _entityAttributeEntityService;
 
-        public CompanyEntityService(IAddressEntityService addressEntityService)
+        public CompanyEntityService(IAddressEntityService addressEntityService, IEntityAttributeEntityService entityAttributeEntityService)
         {
             _addressEntityService = addressEntityService;
+            _entityAttributeEntityService = entityAttributeEntityService;
         }
         public Company Map(CompanyData compData)
         {
@@ -26,7 +28,8 @@ namespace QIQO.Business.Companies.Model.Services
                 CompanyCode = company.CompanyCode,
                 CompanyName = company.CompanyName,
                 CompanyDesc = company.CompanyDesc,
-                CompanyAddresses = _addressEntityService.Map(company.CompanyAddresses)
+                CompanyAddresses = _addressEntityService.Map(company.CompanyAddresses),
+                CompanyAttributes = _entityAttributeEntityService.Map(company.CompanyAttributes)
             };
         }
     }
