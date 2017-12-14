@@ -4,5 +4,5 @@ services:
   qiqo.business.companies:
     image: qiqo.business.companies
     build:
-      context: ./QIQO.Business.Companies
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: QIQO.Business.Companies/Dockerfile
