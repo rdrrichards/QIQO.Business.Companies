@@ -3,7 +3,7 @@
   <PropertyGroup Label="Globals">
     <ProjectVersion>2.1</ProjectVersion>
     <DockerTargetOS>Linux</DockerTargetOS>
-    <ProjectGuid>c821c8a2-5106-4258-abbe-be82e6c586f5</ProjectGuid>
+    <ProjectGuid>87845f1f-2704-45fe-97f1-e13046056fbd</ProjectGuid>
     <DockerLaunchAction>None</DockerLaunchAction>
     <DockerServiceUrl>{Scheme}://localhost:{ServicePort}/api/values</DockerServiceUrl>
     <DockerServiceName>qiqo.business.companies</DockerServiceName>
